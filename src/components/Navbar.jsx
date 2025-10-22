@@ -128,7 +128,7 @@ export default function Navbar(){
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2 sm:py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2 sm:py-3 flex items-center justify-between relative">
         {/* Enhanced Logo with Text - Much Larger and More Visible */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-3 flex-1 lg:flex-none">
           <motion.div 
@@ -267,36 +267,34 @@ export default function Navbar(){
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 top-16 bg-white z-50 overflow-y-auto"
+            className="lg:hidden absolute top-full left-0 right-0 bg-white z-50 shadow-lg border-t border-gray-200 mobile-menu"
           >
-            <div className="px-6 py-8 space-y-4 h-full flex flex-col">
+            <div className="px-4 py-6 space-y-3">
               {/* Navigation Links */}
-              <div className="space-y-2 flex-1">
-                {navItems.map((item, index) => (
-                  <motion.div
-                    key={item.to}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={item.to}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                >
+                  <NavLink 
+                    to={item.to} 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="block py-4 px-4 text-lg font-semibold rounded-lg hover:bg-primary-50 transition-colors min-h-[56px] flex items-center"
                   >
-                    <NavLink 
-                      to={item.to} 
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-4 px-4 text-xl font-semibold rounded-xl hover:bg-primary-50 transition-colors min-h-[60px] flex items-center mobile-menu-item"
-                    >
-                      {item.label}
-                    </NavLink>
-                  </motion.div>
-                ))}
-              </div>
+                    {item.label}
+                  </NavLink>
+                </motion.div>
+              ))}
               
               {/* Contact Buttons */}
-              <div className="pt-6 border-t border-gray-200 space-y-4">
+              <div className="pt-4 border-t border-gray-200 space-y-3">
                 <a 
                   href="tel:9848628863" 
-                  className="flex items-center gap-4 text-primary-600 hover:text-primary-700 transition-colors w-full py-4 px-4 text-xl font-semibold rounded-xl hover:bg-primary-50 min-h-[60px] touch-target"
+                  className="flex items-center gap-3 text-primary-600 hover:text-primary-700 transition-colors w-full py-3 px-4 text-lg font-semibold rounded-lg hover:bg-primary-50 min-h-[56px]"
                 >
-                  <FaPhone className="text-xl" />
+                  <FaPhone className="text-lg" />
                   <span>Call Now</span>
                 </a>
                 <button
@@ -304,9 +302,9 @@ export default function Navbar(){
                     setIsChatbotOpen(true)
                     setIsMobileMenuOpen(false)
                   }}
-                  className="flex items-center gap-4 bg-primary-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-xl min-h-[60px] touch-target"
+                  className="flex items-center gap-3 bg-primary-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-lg min-h-[56px]"
                 >
-                  <FaRobot className="text-xl" />
+                  <FaRobot className="text-lg" />
                   Chatbot
                 </button>
               </div>
