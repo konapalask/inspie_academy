@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaGraduationCap, FaBookOpen, FaTrophy, FaUsers, FaRocket, FaStar } from 'react-icons/fa'
+import { FaGraduationCap, FaBookOpen, FaTrophy, FaUsers, FaRocket, FaStar, FaRobot } from 'react-icons/fa'
 import lottie from 'lottie-web'
 import OptimizedThreeBackground from '../components/OptimizedThreeBackground'
 import ScrollAnimation from '../components/ScrollAnimation'
@@ -10,9 +10,11 @@ import CinematicParticlesComponent from '../components/CinematicParticles'
 import ThreeDHero from '../components/ThreeDHero'
 import { FeatureCard, TestimonialCard, FloatingActionButton } from '../components/ThreeDCard'
 import ExamBanner from '../components/ExamBanner'
+import AIChatbot from '../components/AIChatbot'
 
 export default function Home(){
   const animRef = useRef(null)
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false)
   const [stats, setStats] = useState({
     students: 10000,
     success: 85,
@@ -154,14 +156,14 @@ export default function Home(){
                   <span className="hidden sm:inline">Enroll Now for Upcoming Batch</span>
                   <span className="sm:hidden">Enroll Now</span>
                 </Link>
-                <a 
-                  href="tel:9848628863" 
+                <button
+                  onClick={() => setIsChatbotOpen(true)}
                   className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary-600 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-3 lg:py-4 rounded-xl text-center min-h-[48px] flex items-center justify-center"
                 >
-                  <FaUsers className="inline mr-2 text-sm sm:text-base" />
-                  <span className="hidden sm:inline">Book a Free Demo Session</span>
-                  <span className="sm:hidden">Free Demo</span>
-                </a>
+                  <FaRobot className="inline mr-2 text-sm sm:text-base" />
+                  <span className="hidden sm:inline">AI Course Recommendation</span>
+                  <span className="sm:hidden">AI Enquiry</span>
+                </button>
               </motion.div>
 
               {/* Animated Statistics - Mobile Responsive */}
@@ -387,6 +389,12 @@ export default function Home(){
           className="shadow-2xl w-12 h-12 sm:w-16 sm:h-16"
         />
       </motion.div>
+      
+      {/* AI Chatbot */}
+      <AIChatbot 
+        isOpen={isChatbotOpen} 
+        onClose={() => setIsChatbotOpen(false)} 
+      />
     </div>
   )
 }

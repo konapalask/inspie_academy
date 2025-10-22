@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import { FaBars, FaTimes, FaPhone, FaWhatsapp, FaGraduationCap } from 'react-icons/fa'
+import { FaBars, FaTimes, FaPhone, FaWhatsapp, FaGraduationCap, FaRobot } from 'react-icons/fa'
+import AIChatbot from './AIChatbot'
 
 const NavLink = ({to, children, onClick}) => {
   const loc = useLocation()
@@ -74,6 +75,7 @@ const NavLink = ({to, children, onClick}) => {
 export default function Navbar(){
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -191,10 +193,8 @@ export default function Navbar(){
             />
           </motion.a>
           
-          <motion.a 
-            href="https://api.whatsapp.com/send?phone=919848628863" 
-            target="_blank"
-            rel="noopener noreferrer"
+          <motion.button
+            onClick={() => setIsChatbotOpen(true)}
             className="flex items-center gap-1 xl:gap-2 bg-primary-600 text-white px-2 xl:px-4 py-1 xl:py-2 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 hover:shadow-lg relative group text-xs xl:text-sm"
             whileHover={{ 
               scale: 1.05,
@@ -209,21 +209,21 @@ export default function Navbar(){
               whileHover={{ rotateY: 10 }}
               transition={{ duration: 0.3 }}
             >
-              <FaWhatsapp className="text-xs xl:text-sm" />
-              <span className="hidden xl:inline">Enquiry</span>
-              <span className="xl:hidden">Enquiry</span>
+              <FaRobot className="text-xs xl:text-sm" />
+              <span className="hidden xl:inline">AI Enquiry</span>
+              <span className="xl:hidden">AI Enquiry</span>
             </motion.div>
             <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-green-500/30 to-primary-500/30 rounded-lg opacity-0"
+              className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-primary-500/30 rounded-lg opacity-0"
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
             <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-green-400/20 to-primary-400/20 rounded-lg blur-sm opacity-0"
+              className="absolute -inset-1 bg-gradient-to-r from-blue-400/20 to-primary-400/20 rounded-lg blur-sm opacity-0"
               whileHover={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
             />
-          </motion.a>
+          </motion.button>
         </div>
 
         {/* Mobile Menu Button - Improved Touch Target */}
@@ -271,20 +271,27 @@ export default function Navbar(){
                   <FaPhone className="text-lg" />
                   <span>Call Now</span>
                 </a>
-                <a 
-                  href="https://api.whatsapp.com/send?phone=919848628863" 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => {
+                    setIsChatbotOpen(true)
+                    setIsMobileMenuOpen(false)
+                  }}
                   className="flex items-center gap-3 bg-primary-600 text-white px-4 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-lg min-h-[56px]"
                 >
-                  <FaWhatsapp className="text-lg" />
-                  Enquiry
-                </a>
+                  <FaRobot className="text-lg" />
+                  AI Enquiry
+                </button>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      
+      {/* AI Chatbot */}
+      <AIChatbot 
+        isOpen={isChatbotOpen} 
+        onClose={() => setIsChatbotOpen(false)} 
+      />
     </motion.header>
   )
 }
