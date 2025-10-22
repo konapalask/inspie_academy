@@ -128,18 +128,18 @@ export default function Home() {
       </div>
 
       {/* Hero Section - Ultra Premium */}
-      <section className="relative bg-black text-white overflow-hidden">
-        <div className="container mx-auto px-6 lg:px-16 xl:px-24 py-32 sm:py-40 lg:py-48 relative z-10">
+      <section className="relative bg-black text-white overflow-hidden min-h-[85vh] sm:min-h-screen flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 py-20 sm:py-32 lg:py-48 relative z-10 w-full">
           <div className="max-w-5xl">
             {/* Premium Tag */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-3 border border-white/20 px-6 py-3 mb-12"
+              className="inline-flex items-center gap-2 sm:gap-3 border border-white/20 px-4 sm:px-6 py-2 sm:py-3 mb-8 sm:mb-12"
             >
-              <FaMinus className="text-xs" />
-              <span className="text-xs font-light tracking-[0.2em] uppercase">Premium Education</span>
+              <FaMinus className="text-[8px] sm:text-xs" />
+              <span className="text-[10px] sm:text-xs font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase">Premium Education</span>
             </motion.div>
             
             {/* Hero Heading */}
@@ -147,7 +147,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light mb-8 leading-[1.1] tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light mb-6 sm:mb-8 leading-[1.15] sm:leading-[1.1] tracking-tight"
               >
               Excellence in
                 <br />
@@ -159,7 +159,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-lg sm:text-xl text-white/70 mb-16 leading-relaxed max-w-2xl font-light tracking-wide"
+              className="text-base sm:text-lg lg:text-xl text-white/70 mb-10 sm:mb-16 leading-relaxed max-w-2xl font-light tracking-normal sm:tracking-wide"
               >
               Inspire Academy delivers world-class coaching for NEET, JEE, and EAMCET with proven methodologies and expert faculty.
               </motion.p>
@@ -169,19 +169,19 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6"
             >
               <Link 
                 to="/admissions"
-                className="group inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-sm tracking-[0.1em] uppercase hover:bg-gray-100 transition-all duration-500"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-black px-8 sm:px-12 py-4 sm:py-6 font-medium text-xs sm:text-sm tracking-[0.1em] uppercase hover:bg-gray-100 transition-all duration-500"
               >
                 Enroll Now
-                <FaArrowRight className="text-xs group-hover:translate-x-2 transition-transform duration-500" />
+                <FaArrowRight className="text-[10px] sm:text-xs group-hover:translate-x-2 transition-transform duration-500" />
               </Link>
               
                 <Link 
                   to="/courses" 
-                className="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-12 py-6 font-medium text-sm tracking-[0.1em] uppercase hover:bg-white hover:text-black transition-all duration-500"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 border border-white/30 text-white px-8 sm:px-12 py-4 sm:py-6 font-medium text-xs sm:text-sm tracking-[0.1em] uppercase hover:bg-white hover:text-black transition-all duration-500"
               >
                 View Programs
               </Link>
@@ -193,7 +193,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute bottom-12 right-6 lg:right-16 xl:right-24"
+            className="hidden lg:block absolute bottom-12 right-6 lg:right-16 xl:right-24"
           >
             <div className="grid grid-cols-2 gap-8 text-right">
               {stats.map((stat, index) => (
@@ -202,6 +202,23 @@ export default function Home() {
                   <div className="text-white/50 text-xs tracking-[0.15em] uppercase">{stat.label}</div>
                 </div>
               ))}
+              </div>
+            </motion.div>
+            
+            {/* Mobile Stats - Below Content */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="lg:hidden mt-16 pt-12 border-t border-white/10"
+            >
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-3xl sm:text-4xl font-light mb-2">{stat.number}</div>
+                    <div className="text-white/50 text-[10px] sm:text-xs tracking-[0.15em] uppercase">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </motion.div>
             </div>
