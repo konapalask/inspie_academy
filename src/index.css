@@ -498,10 +498,50 @@ body {
     padding: 1rem;
   }
   
-  /* Better touch targets for mobile */
-  .touch-target {
-    min-width: 44px;
-    min-height: 44px;
+/* Better touch targets for mobile */
+.touch-target {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Mobile menu improvements */
+.mobile-menu-item {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 1rem;
+  min-height: 60px;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-item:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: translateX(4px);
+}
+
+/* Mobile scroll improvements */
+@media (max-width: 768px) {
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Prevent scroll bounce on iOS */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Mobile menu overlay */
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 30;
   }
 }
 

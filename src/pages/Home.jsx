@@ -116,13 +116,13 @@ export default function Home(){
         </div>
 
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-12 sm:py-16 lg:py-20 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white"
+              className="text-white order-2 lg:order-1"
             >
               <motion.h1 
                 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 text-shadow leading-tight"
@@ -202,13 +202,13 @@ export default function Home(){
 
             {/* Right Content - Animation */}
             <motion.div 
-              className="flex items-center justify-center mt-8 lg:mt-0"
+              className="flex items-center justify-center mt-4 lg:mt-0 order-1 lg:order-2"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="relative">
-                <div ref={animRef} style={{width: '100%', maxWidth: 500, height: 300}} aria-hidden="true" className="w-full max-w-sm sm:max-w-md lg:max-w-lg">
+                <div ref={animRef} style={{width: '100%', maxWidth: 500, height: 200}} aria-hidden="true" className="w-full max-w-xs sm:max-w-sm lg:max-w-lg">
                   {/* Lottie animation will appear here */}
                 </div>
                 {/* Fallback SVG if no Lottie animation */}
@@ -216,9 +216,9 @@ export default function Home(){
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 border-4 border-white/20 rounded-full flex items-center justify-center"
+                    className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 border-4 border-white/20 rounded-full flex items-center justify-center"
                   >
-                    <FaGraduationCap size={60} className="text-white/60 sm:w-16 sm:h-16 lg:w-20 lg:h-20" />
+                    <FaGraduationCap size={40} className="text-white/60 sm:w-12 sm:h-12 lg:w-20 lg:h-20" />
                   </motion.div>
                 </div>
               </div>

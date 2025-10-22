@@ -76,6 +76,20 @@ export default function Navbar(){
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isChatbotOpen, setIsChatbotOpen] = useState(false)
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMobileMenuOpen])
   const location = useLocation()
 
   useEffect(() => {
@@ -240,35 +254,40 @@ export default function Navbar(){
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
+            className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto"
           >
-            <div className="px-4 py-6 space-y-2">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.to}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                >
-                  <NavLink 
-                    to={item.to} 
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-4 px-3 text-lg font-semibold rounded-lg hover:bg-primary-50 transition-colors min-h-[56px] flex items-center"
+            <div className="px-6 py-8 space-y-4 h-full flex flex-col">
+              {/* Navigation Links */}
+              <div className="space-y-2 flex-1">
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={item.to}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
                   >
-                    {item.label}
-                  </NavLink>
-                </motion.div>
-              ))}
-              <div className="pt-4 border-t border-gray-200 space-y-3">
+                    <NavLink 
+                      to={item.to} 
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="block py-4 px-4 text-xl font-semibold rounded-xl hover:bg-primary-50 transition-colors min-h-[60px] flex items-center mobile-menu-item"
+                    >
+                      {item.label}
+                    </NavLink>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Contact Buttons */}
+              <div className="pt-6 border-t border-gray-200 space-y-4">
                 <a 
                   href="tel:9848628863" 
-                  className="flex items-center gap-3 text-primary-600 hover:text-primary-700 transition-colors w-full py-4 px-3 text-lg font-semibold rounded-lg hover:bg-primary-50 min-h-[56px]"
+                  className="flex items-center gap-4 text-primary-600 hover:text-primary-700 transition-colors w-full py-4 px-4 text-xl font-semibold rounded-xl hover:bg-primary-50 min-h-[60px] touch-target"
                 >
-                  <FaPhone className="text-lg" />
+                  <FaPhone className="text-xl" />
                   <span>Call Now</span>
                 </a>
                 <button
@@ -276,9 +295,9 @@ export default function Navbar(){
                     setIsChatbotOpen(true)
                     setIsMobileMenuOpen(false)
                   }}
-                  className="flex items-center gap-3 bg-primary-600 text-white px-4 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-lg min-h-[56px]"
+                  className="flex items-center gap-4 bg-primary-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-xl min-h-[60px] touch-target"
                 >
-                  <FaRobot className="text-lg" />
+                  <FaRobot className="text-xl" />
                   AI Enquiry
                 </button>
               </div>
