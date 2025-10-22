@@ -130,9 +130,9 @@ export default function Navbar(){
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 py-2 sm:py-3 flex items-center justify-between">
         {/* Enhanced Logo with Text - Much Larger and More Visible */}
-        <Link to="/" className="group flex items-center gap-2 sm:gap-3">
+        <Link to="/" className="group flex items-center gap-2 sm:gap-3 flex-1 lg:flex-none">
           <motion.div 
-            className="h-14 w-auto sm:h-16 md:h-18 lg:h-20 xl:h-22 shadow-xl overflow-hidden relative bg-white rounded-lg px-3 sm:px-4 py-2 logo-container"
+            className="h-16 w-auto sm:h-18 md:h-20 lg:h-22 xl:h-24 shadow-xl overflow-hidden relative bg-white rounded-lg px-4 sm:px-5 py-2 logo-container flex-1 lg:flex-none"
             whileHover={{ 
               scale: 1.05,
               rotateY: 5,
@@ -169,6 +169,15 @@ export default function Navbar(){
             />
           </motion.div>
           
+          {/* Academy Name - Visible on Mobile */}
+          <div className="flex flex-col lg:hidden mobile-logo-text">
+            <h1 className="text-lg font-bold text-primary-600 leading-tight">
+              Andhra Inspire Academy
+            </h1>
+            <p className="text-xs text-gray-600 leading-tight">
+              Best Institute for Intermediate Students
+            </p>
+          </div>
         </Link>
 
         {/* Desktop Navigation - Improved Spacing */}

@@ -478,8 +478,16 @@ body {
   
   /* Mobile logo improvements */
   .logo-container {
-    min-height: 48px;
-    min-width: 48px;
+    min-height: 64px;
+    min-width: 64px;
+    flex: 1;
+    max-width: 60%;
+  }
+  
+  /* Mobile header logo text */
+  .mobile-logo-text {
+    flex: 1;
+    min-width: 0;
   }
   
   /* Mobile menu improvements */
