@@ -132,7 +132,7 @@ export default function Navbar(){
         {/* Enhanced Logo with Text - Much Larger and More Visible */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-3">
           <motion.div 
-            className="h-12 w-auto sm:h-14 md:h-16 lg:h-18 xl:h-20 shadow-xl overflow-hidden relative bg-white rounded-lg px-2 sm:px-3 py-2 logo-container"
+            className="h-14 w-auto sm:h-16 md:h-18 lg:h-20 xl:h-22 shadow-xl overflow-hidden relative bg-white rounded-lg px-3 sm:px-4 py-2 logo-container"
             whileHover={{ 
               scale: 1.05,
               rotateY: 5,
@@ -224,8 +224,8 @@ export default function Navbar(){
               transition={{ duration: 0.3 }}
             >
               <FaRobot className="text-xs xl:text-sm" />
-              <span className="hidden xl:inline">AI Enquiry</span>
-              <span className="xl:hidden">AI Enquiry</span>
+              <span className="hidden xl:inline">Chatbot</span>
+              <span className="xl:hidden">Chatbot</span>
             </motion.div>
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-blue-500/30 to-primary-500/30 rounded-lg opacity-0"
@@ -258,7 +258,7 @@ export default function Navbar(){
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden fixed inset-0 top-16 bg-white z-40 overflow-y-auto"
+            className="lg:hidden fixed inset-0 top-16 bg-white z-50 overflow-y-auto"
           >
             <div className="px-6 py-8 space-y-4 h-full flex flex-col">
               {/* Navigation Links */}
@@ -298,7 +298,7 @@ export default function Navbar(){
                   className="flex items-center gap-4 bg-primary-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-xl min-h-[60px] touch-target"
                 >
                   <FaRobot className="text-xl" />
-                  AI Enquiry
+                  Chatbot
                 </button>
               </div>
             </div>

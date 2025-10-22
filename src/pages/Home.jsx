@@ -161,8 +161,8 @@ export default function Home(){
                   className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary-600 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-3 lg:py-4 rounded-xl text-center min-h-[48px] flex items-center justify-center"
                 >
                   <FaRobot className="inline mr-2 text-sm sm:text-base" />
-                  <span className="hidden sm:inline">AI Course Recommendation</span>
-                  <span className="sm:hidden">AI Enquiry</span>
+                  <span className="hidden sm:inline">Chatbot</span>
+                  <span className="sm:hidden">Chatbot</span>
                 </button>
               </motion.div>
 
