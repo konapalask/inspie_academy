@@ -1,0 +1,1 @@
+Place Lottie JSON files here and update src/pages/Home.jsx to load them.

@@ -1,0 +1,30 @@
+{
+  "name": "andhra-inspire-academy",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lottie-web": "^5.11.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1",
+    "framer-motion": "^10.16.4",
+    "react-icons": "^4.11.0",
+    "swiper": "^10.3.1",
+    "three": "^0.158.0",
+    "@react-three/fiber": "^8.15.12",
+    "@react-three/drei": "^9.88.13",
+    "react-intersection-observer": "^9.5.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.3.5",
+    "vite": "^5.0.0"
+  }
+}
