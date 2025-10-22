@@ -475,6 +475,34 @@ body {
     height: 100%;
     overflow-x: hidden;
   }
+  
+  /* Mobile logo improvements */
+  .logo-container {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  /* Mobile menu improvements */
+  .mobile-menu-item {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5;
+    font-weight: 600;
+    padding: 1rem 0.75rem;
+    min-height: 56px;
+  }
+  
+  /* Mobile menu button improvements */
+  .mobile-menu-button {
+    min-width: 56px;
+    min-height: 56px;
+    padding: 1rem;
+  }
+  
+  /* Better touch targets for mobile */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 /* Smooth scroll behavior for all browsers */

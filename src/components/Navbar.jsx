@@ -116,7 +116,7 @@ export default function Navbar(){
         {/* Enhanced Logo with Text - Much Larger and More Visible */}
         <Link to="/" className="group flex items-center gap-2 sm:gap-3">
           <motion.div 
-            className="h-8 w-auto sm:h-10 md:h-12 lg:h-14 xl:h-16 shadow-xl overflow-hidden relative bg-white rounded-lg px-1 sm:px-2 py-1 logo-container"
+            className="h-12 w-auto sm:h-14 md:h-16 lg:h-18 xl:h-20 shadow-xl overflow-hidden relative bg-white rounded-lg px-2 sm:px-3 py-2 logo-container"
             whileHover={{ 
               scale: 1.05,
               rotateY: 5,
@@ -229,10 +229,10 @@ export default function Navbar(){
         {/* Mobile Menu Button - Improved Touch Target */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-3 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors touch-manipulation min-w-[48px] min-h-[48px] flex items-center justify-center"
+          className="lg:hidden p-4 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors touch-manipulation min-w-[56px] min-h-[56px] flex items-center justify-center"
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
 
@@ -246,7 +246,7 @@ export default function Navbar(){
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-white border-t border-gray-200 shadow-lg"
           >
-            <div className="px-3 py-4 space-y-1">
+            <div className="px-4 py-6 space-y-2">
               {navItems.map((item, index) => (
                 <motion.div
                   key={item.to}
@@ -257,27 +257,27 @@ export default function Navbar(){
                   <NavLink 
                     to={item.to} 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-3 px-2 text-base font-medium rounded-lg hover:bg-primary-50 transition-colors min-h-[48px] flex items-center"
+                    className="block py-4 px-3 text-lg font-semibold rounded-lg hover:bg-primary-50 transition-colors min-h-[56px] flex items-center"
                   >
                     {item.label}
                   </NavLink>
                 </motion.div>
               ))}
-              <div className="pt-3 border-t border-gray-200 space-y-2">
+              <div className="pt-4 border-t border-gray-200 space-y-3">
                 <a 
                   href="tel:9848628863" 
-                  className="flex items-center gap-3 text-primary-600 hover:text-primary-700 transition-colors w-full py-3 px-2 text-base font-medium rounded-lg hover:bg-primary-50 min-h-[48px]"
+                  className="flex items-center gap-3 text-primary-600 hover:text-primary-700 transition-colors w-full py-4 px-3 text-lg font-semibold rounded-lg hover:bg-primary-50 min-h-[56px]"
                 >
-                  <FaPhone className="text-base" />
+                  <FaPhone className="text-lg" />
                   <span>Call Now</span>
                 </a>
                 <a 
                   href="https://api.whatsapp.com/send?phone=919848628863" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 bg-primary-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-base min-h-[48px]"
+                  className="flex items-center gap-3 bg-primary-600 text-white px-4 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-lg min-h-[56px]"
                 >
-                  <FaWhatsapp className="text-base" />
+                  <FaWhatsapp className="text-lg" />
                   Enquiry
                 </a>
               </div>
