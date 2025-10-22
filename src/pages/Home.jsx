@@ -1,299 +1,408 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { FaGraduationCap, FaBookOpen, FaTrophy, FaUsers, FaRocket, FaStar, FaRobot } from 'react-icons/fa'
-import lottie from 'lottie-web'
-import OptimizedThreeBackground from '../components/OptimizedThreeBackground'
-import ScrollAnimation from '../components/ScrollAnimation'
-import AnimatedStats from '../components/AnimatedStats'
-import CinematicParticlesComponent from '../components/CinematicParticles'
-import ThreeDHero from '../components/ThreeDHero'
-import { FeatureCard, TestimonialCard, FloatingActionButton } from '../components/ThreeDCard'
+import { 
+  FaGraduationCap, 
+  FaBookOpen, 
+  FaTrophy, 
+  FaUsers,
+  FaChalkboardTeacher,
+  FaLaptopCode,
+  FaCertificate,
+  FaCheckCircle,
+  FaArrowRight,
+  FaQuoteLeft,
+  FaMinus
+} from 'react-icons/fa'
 import ExamBanner from '../components/ExamBanner'
-import AIChatbot from '../components/AIChatbot'
 
-export default function Home(){
-  const animRef = useRef(null)
-  const [isChatbotOpen, setIsChatbotOpen] = useState(false)
-  const [stats, setStats] = useState({
-    students: 10000,
-    success: 85,
-    courses: 10,
-    years: 13
-  })
+export default function Home() {
+  const [activeCategory, setActiveCategory] = useState('all')
 
-  useEffect(() => {
+  const stats = [
+    { number: '10,000+', label: 'Students' },
+    { number: '85%', label: 'Success' },
+    { number: '10+', label: 'Programs' },
+    { number: '13+', label: 'Years' }
+  ]
 
-    // Animate statistics on load
-    const animateStats = () => {
-      const targetStats = { students: 10000, success: 85, courses: 10, years: 13 }
-      const duration = 2000
-      const steps = 60
-      const stepDuration = duration / steps
-
-      let currentStep = 0
-      const timer = setInterval(() => {
-        currentStep++
-        const progress = currentStep / steps
-        setStats({
-          students: Math.floor(targetStats.students * progress),
-          success: Math.floor(targetStats.success * progress),
-          courses: Math.floor(targetStats.courses * progress),
-          years: Math.floor(targetStats.years * progress)
-        })
-        if (currentStep >= steps) clearInterval(timer)
-      }, stepDuration)
+  const courses = [
+    {
+      id: 1,
+      title: 'NEET Preparation',
+      category: 'medical',
+      subtitle: 'Medical Entrance',
+      duration: '24 Months',
+      students: '2,500+ Enrolled',
+      price: '₹75,000',
+      period: 'per year',
+      features: ['Live Interactive Classes', 'Study Material', 'Mock Tests', 'Personal Mentorship']
+    },
+    {
+      id: 2,
+      title: 'JEE Main & Advanced',
+      category: 'engineering',
+      subtitle: 'Engineering Entrance',
+      duration: '24 Months',
+      students: '3,200+ Enrolled',
+      price: '₹80,000',
+      period: 'per year',
+      features: ['Expert Faculty', 'Problem Sets', 'Assessments', 'Doubt Clearing']
+    },
+    {
+      id: 3,
+      title: 'EAMCET Coaching',
+      category: 'engineering',
+      subtitle: 'State Level',
+      duration: '12 Months',
+      students: '1,800+ Enrolled',
+      price: '₹60,000',
+      period: 'per year',
+      features: ['Board Alignment', 'Previous Papers', 'Test Series', 'Analytics']
+    },
+    {
+      id: 4,
+      title: 'Foundation',
+      category: 'foundation',
+      subtitle: 'Class 9-10',
+      duration: '12 Months',
+      students: '2,100+ Enrolled',
+      price: '₹50,000',
+      period: 'per year',
+      features: ['Conceptual Learning', 'Olympiad Prep', 'Testing', 'Tracking']
     }
-
-    setTimeout(animateStats, 500)
-
-    // Lottie animation setup
-    if (animRef.current) {
-    const anim = lottie.loadAnimation({
-      container: animRef.current,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-        // You can add a lottie JSON file here
-    })
-    return () => anim.destroy()
-    }
-  }, [])
-
-  const features = [
-    { icon: FaBookOpen, title: "Comprehensive Courses", desc: "NEET, JEE Mains, EAMCET, Intermediate" },
-    { icon: FaTrophy, title: "Proven Results", desc: "85% Success Rate with Top Ranks" },
-    { icon: FaUsers, title: "Personal Attention", desc: "Small Batch Sizes (Max 25 students)" },
-    { icon: FaGraduationCap, title: "Quality Education", desc: "World-class coaching and mentorship" }
   ]
 
   const testimonials = [
     {
-      name: "Rahul Kumar",
-      course: "JEE Mains",
-      score: "AIR 156",
-      quote: "Andhra Inspire Academy helped me achieve my dream of getting into IIT Delhi. The faculty's personalized approach made all the difference!"
+      name: 'Rahul Kumar',
+      course: 'JEE Main 2024',
+      achievement: 'AIR 156',
+      institution: 'IIT Delhi',
+      quote: 'The structured approach and dedicated faculty at Inspire Academy helped me secure admission to IIT Delhi.'
     },
     {
-      name: "Priya Sharma",
-      course: "EAMCET",
-      score: "Rank 89",
-      quote: "The comprehensive study material and regular mock tests prepared me thoroughly for EAMCET. I couldn't have achieved this success without their guidance."
+      name: 'Priya Sharma',
+      course: 'NEET 2024',
+      achievement: 'AIR 892',
+      institution: 'AIIMS',
+      quote: 'Comprehensive study materials and expert mentorship prepared me thoroughly for the examination.'
     },
     {
-      name: "Amit Singh",
-      course: "Intermediate",
-      score: "95%",
-      quote: "Best coaching institute in the city. The small batch sizes and individual attention helped me excel in all subjects."
+      name: 'Amit Singh',
+      course: 'EAMCET 2024',
+      achievement: 'State Rank 89',
+      institution: 'JNTU Kakinada',
+      quote: 'Small batch sizes ensured individual attention from experienced faculty members.'
+    }
+  ]
+
+  const features = [
+    {
+      icon: FaChalkboardTeacher,
+      title: 'Expert Faculty',
+      description: 'Highly qualified educators with extensive experience in competitive examination coaching'
+    },
+    {
+      icon: FaLaptopCode,
+      title: 'Hybrid Learning',
+      description: 'Seamless integration of traditional instruction with modern digital resources'
+    },
+    {
+      icon: FaTrophy,
+      title: 'Proven Results',
+      description: 'Consistent track record of excellence with 85% success rate annually'
+    },
+    {
+      icon: FaCertificate,
+      title: 'Resources',
+      description: 'Comprehensive study materials and extensive practice test series'
     }
   ]
 
   return (
-    <div className="min-h-screen">
-      {/* Exam Banner */}
-      <ExamBanner />
+    <div className="min-h-screen bg-white">
+      {/* Exam Banner - positioned below fixed navbar */}
+      <div className="pt-20">
+        <ExamBanner />
+      </div>
 
-      {/* Hero Section */}
-      <section className="hero-bg relative min-h-screen flex items-center overflow-hidden">
-        {/* Simplified 3D Background - Mobile Optimized */}
-        <div className="hidden lg:block">
-          <ThreeDHero className="opacity-40" />
-        </div>
-        <OptimizedThreeBackground className="opacity-20 sm:opacity-30" />
-        
-        {/* Simplified Floating Elements - Hidden on Mobile */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
-          <motion.div
-            className="absolute top-20 left-10 w-12 h-12 bg-white/5 rounded-full"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute top-40 right-20 w-8 h-8 bg-white/5 rounded-lg"
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-          />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6 py-12 sm:py-16 lg:py-20 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left Content */}
+      {/* Hero Section - Ultra Premium */}
+      <section className="relative bg-black text-white overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24 py-32 sm:py-40 lg:py-48 relative z-10">
+          <div className="max-w-5xl">
+            {/* Premium Tag */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white order-2 lg:order-1"
+              className="inline-flex items-center gap-3 border border-white/20 px-6 py-3 mb-12"
             >
+              <FaMinus className="text-xs" />
+              <span className="text-xs font-light tracking-[0.2em] uppercase">Premium Education</span>
+            </motion.div>
+            
+            {/* Hero Heading */}
               <motion.h1 
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 text-shadow leading-tight"
-                initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light mb-8 leading-[1.1] tracking-tight"
               >
-                Inspire Academy – Best Institute for Intermediate Students | Top Coaching for Class 11 & 12
+              Excellence in
+                <br />
+              <span className="font-semibold">Academic Preparation</span>
               </motion.h1>
               
+            {/* Subheading */}
               <motion.p 
-                className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl mb-4 sm:mb-6 lg:mb-8 text-blue-100 leading-relaxed px-2 sm:px-0"
-                initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-lg sm:text-xl text-white/70 mb-16 leading-relaxed max-w-2xl font-light tracking-wide"
               >
-                Best institute for intermediate students in Andhra Pradesh. Expert coaching for Class 11 & 12 students with personalized guidance, live interactive classes, and proven results. Trusted by 10,000+ intermediate students for NEET, JEE, and EAMCET preparation with 85% success rate.
+              Inspire Academy delivers world-class coaching for NEET, JEE, and EAMCET with proven methodologies and expert faculty.
               </motion.p>
 
+            {/* CTA Buttons */}
               <motion.div 
-                className="flex flex-col gap-3 mb-6 sm:mb-8 lg:mb-12 px-2 sm:px-0"
-                initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                <Link 
-                  to="/admissions" 
-                  className="btn-primary bg-white text-primary-600 hover:bg-blue-50 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-3 lg:py-4 rounded-xl shadow-2xl text-center min-h-[48px] flex items-center justify-center"
-                >
-                  <FaRocket className="inline mr-2 text-sm sm:text-base" />
-                  <span className="hidden sm:inline">Enroll Now for Upcoming Batch</span>
-                  <span className="sm:hidden">Enroll Now</span>
-                </Link>
-                <button
-                  onClick={() => setIsChatbotOpen(true)}
-                  className="btn-secondary border-2 border-white text-white hover:bg-white hover:text-primary-600 text-sm sm:text-base lg:text-lg px-4 sm:px-6 lg:px-8 py-3 sm:py-3 lg:py-4 rounded-xl text-center min-h-[48px] flex items-center justify-center"
-                >
-                  <FaRobot className="inline mr-2 text-sm sm:text-base" />
-                  <span className="hidden sm:inline">Chatbot</span>
-                  <span className="sm:hidden">Chatbot</span>
-                </button>
-              </motion.div>
-
-              {/* Animated Statistics - Mobile Responsive */}
-              <motion.div 
-                className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 px-2 sm:px-0"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-yellow-300 mb-1">
-                    {stats.students}+
-                  </div>
-                  <div className="text-blue-200 text-xs sm:text-sm">Students Trained</div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-green-300 mb-1">
-                    {stats.success}%
-                  </div>
-                  <div className="text-blue-200 text-xs sm:text-sm">Success Rate</div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-purple-300 mb-1">
-                    {stats.courses}
-                  </div>
-                  <div className="text-blue-200 text-xs sm:text-sm">Courses Offered</div>
-                </div>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
-                  <div className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-orange-300 mb-1">
-                    {stats.years}+
-                  </div>
-                  <div className="text-blue-200 text-xs sm:text-sm">Years Experience</div>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Right Content - Animation */}
-            <motion.div 
-              className="flex items-center justify-center mt-4 lg:mt-0 order-1 lg:order-2"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-6"
             >
-              <div className="relative">
-                <div ref={animRef} style={{width: '100%', maxWidth: 500, height: 200}} aria-hidden="true" className="w-full max-w-xs sm:max-w-sm lg:max-w-lg">
-                  {/* Lottie animation will appear here */}
+              <Link 
+                to="/admissions"
+                className="group inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-sm tracking-[0.1em] uppercase hover:bg-gray-100 transition-all duration-500"
+              >
+                Enroll Now
+                <FaArrowRight className="text-xs group-hover:translate-x-2 transition-transform duration-500" />
+              </Link>
+              
+                <Link 
+                  to="/courses" 
+                className="inline-flex items-center justify-center gap-3 border border-white/30 text-white px-12 py-6 font-medium text-sm tracking-[0.1em] uppercase hover:bg-white hover:text-black transition-all duration-500"
+              >
+                View Programs
+              </Link>
+            </motion.div>
                 </div>
-                {/* Fallback SVG if no Lottie animation */}
-                <div className="absolute inset-0 flex items-center justify-center">
+
+          {/* Premium Stats */}
                   <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 border-4 border-white/20 rounded-full flex items-center justify-center"
-                  >
-                    <FaGraduationCap size={40} className="text-white/60 sm:w-12 sm:h-12 lg:w-20 lg:h-20" />
-                  </motion.div>
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="absolute bottom-12 right-6 lg:right-16 xl:right-24"
+          >
+            <div className="grid grid-cols-2 gap-8 text-right">
+              {stats.map((stat, index) => (
+                <div key={index} className="border-t border-white/20 pt-4">
+                  <div className="text-4xl font-light mb-1">{stat.number}</div>
+                  <div className="text-white/50 text-xs tracking-[0.15em] uppercase">{stat.label}</div>
                 </div>
+              ))}
               </div>
             </motion.div>
-          </div>
             </div>
       </section>
 
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
+
       {/* Features Section */}
-      <ScrollAnimation className="py-12 sm:py-16 lg:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="text-center mb-24">
           <motion.div 
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Why Choose Inspire Academy?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-2">
-              Inspire Academy empowers students to achieve top ranks in NEET, JEE, and EAMCET through advanced learning methods, conceptual clarity, and constant mentorship. Our expert faculty from premier institutes ensure that every student builds strong fundamentals and exam temperament.
-            </p>
+              className="inline-flex items-center gap-3 mb-8"
+            >
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Our Strengths</span>
+              <FaMinus className="text-xs" />
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl sm:text-6xl font-light text-black mb-6 tracking-tight"
+            >
+              Why Choose <span className="font-semibold">Inspire Academy</span>
+            </motion.h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.8 }}
+                className="group"
               >
-                <FeatureCard
-                  icon={feature.icon}
-                  title={feature.title}
-                  description={feature.desc}
-                  className="h-full"
-                />
+                <div className="mb-8">
+                  <feature.icon className="text-4xl text-black" />
+                </div>
+                <h3 className="text-xl font-medium text-black mb-4 tracking-tight uppercase">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed font-light">{feature.description}</p>
+                <div className="w-12 h-px bg-black mt-6 group-hover:w-full transition-all duration-700"></div>
               </motion.div>
             ))}
           </div>
         </div>
-      </ScrollAnimation>
+      </section>
+
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
+
+      {/* Courses Section */}
+      <section className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-3 mb-8"
+            >
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Programs</span>
+              <FaMinus className="text-xs" />
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl sm:text-6xl font-light text-black mb-12 tracking-tight"
+            >
+              Academic <span className="font-semibold">Programs</span>
+            </motion.h2>
+
+            {/* Premium Category Filter */}
+            <div className="flex flex-wrap justify-center gap-6">
+              {[
+                { value: 'all', label: 'All' },
+                { value: 'medical', label: 'Medical' },
+                { value: 'engineering', label: 'Engineering' },
+                { value: 'foundation', label: 'Foundation' }
+              ].map((category) => (
+                <button
+                  key={category.value}
+                  onClick={() => setActiveCategory(category.value)}
+                  className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 ${
+                    activeCategory === category.value
+                      ? 'bg-black text-white'
+                      : 'bg-white border border-gray-300 text-gray-700 hover:border-black'
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {courses
+              .filter(course => activeCategory === 'all' || course.category === activeCategory)
+              .map((course, index) => (
+                <motion.div
+                  key={course.id}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.8 }}
+                  className="bg-white border border-gray-200 hover:border-black transition-all duration-700 group overflow-hidden"
+                >
+                  <div className="p-10 border-b border-gray-200">
+                    <div className="text-xs tracking-[0.15em] uppercase text-gray-500 mb-3">{course.subtitle}</div>
+                    <h3 className="text-2xl font-medium text-black mb-2 tracking-tight">{course.title}</h3>
+                    <div className="flex items-baseline gap-2 mt-8">
+                      <span className="text-4xl font-light">{course.price}</span>
+                      <span className="text-xs text-gray-500 tracking-wider">{course.period}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="p-10">
+                    <div className="space-y-4 mb-10">
+                      {course.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-3">
+                          <FaMinus className="text-xs mt-2 flex-shrink-0" />
+                          <span className="text-sm text-gray-600 font-light">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="text-xs text-gray-500 mb-4 tracking-wider">{course.duration} • {course.students}</div>
+
+                    <Link 
+                      to="/admissions"
+                      className="block w-full bg-black text-white text-center py-4 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500"
+                    >
+                      Enroll Now
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
 
       {/* Testimonials Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary-50 to-blue-100">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="text-center mb-24">
           <motion.div 
-            className="text-center mb-12 sm:mb-16"
-            initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+              className="inline-flex items-center gap-3 mb-8"
           >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">Success Stories</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600">Hear from our successful students</p>
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Success Stories</span>
+              <FaMinus className="text-xs" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-5xl sm:text-6xl font-light text-black tracking-tight"
+            >
+              Student <span className="font-semibold">Achievements</span>
+            </motion.h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-12">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.8 }}
+                className="bg-gray-50 p-12 border border-gray-200"
               >
-                <TestimonialCard
-                  name={testimonial.name}
-                  course={testimonial.course}
-                  score={testimonial.score}
-                  quote={testimonial.quote}
-                  className="h-full"
-                />
+                <FaQuoteLeft className="text-2xl text-gray-300 mb-8" />
+                
+                <p className="text-gray-700 leading-relaxed mb-10 font-light">
+                  {testimonial.quote}
+                </p>
+                
+                <div className="pt-8 border-t border-gray-200">
+                  <div className="font-medium text-black tracking-tight mb-1">{testimonial.name}</div>
+                  <div className="text-xs text-gray-500 tracking-wider uppercase mb-2">{testimonial.course}</div>
+                  <div className="text-sm font-medium text-black">{testimonial.achievement}</div>
+                  <div className="text-xs text-gray-500 mt-1">{testimonial.institution}</div>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -301,100 +410,66 @@ export default function Home(){
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-primary-600 relative overflow-hidden">
-        {/* 3D Background Elements */}
-        <div className="absolute inset-0">
+      <section className="py-32 bg-black text-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full"
-            animate={{ 
-              y: [0, -20, 0],
-              rotate: [0, 360, 0],
-            }}
-            transition={{ duration: 8, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute bottom-10 right-10 w-24 h-24 bg-white/10 rounded-full"
-            animate={{ 
-              y: [0, 20, 0],
-              rotate: [0, -360, 0],
-            }}
-            transition={{ duration: 10, repeat: Infinity }}
-          />
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-3 mb-12"
+            >
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-white/50">Get Started</span>
+              <FaMinus className="text-xs" />
+            </motion.div>
+            
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-5xl sm:text-6xl font-light mb-8 tracking-tight leading-tight"
+            >
+              Begin Your
+              <br />
+              <span className="font-semibold">Academic Journey</span>
+            </motion.h2>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="text-lg text-white/70 mb-16 font-light leading-relaxed"
+            >
+              Join thousands of successful students who achieved their academic goals with our proven methodology and expert guidance.
+            </motion.p>
+            
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-          >
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">Ready to Start Your Success Journey?</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-blue-100 mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
-              Join 10,000+ successful students who achieved their dreams with Inspire Academy. Whether you prepare offline or online, our structured programs guarantee measurable progress week after week. Book your free counseling session today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <motion.a 
-                href="tel:9492664870" 
-                className="bg-white text-primary-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 hover:shadow-lg text-center relative group"
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateY: 5,
-                }}
-                whileTap={{ scale: 0.95 }}
-                style={{ transformStyle: 'preserve-3d' }}
+              transition={{ delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+            >
+              <Link 
+                to="/admissions"
+                className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
               >
-                <span className="relative z-10">Download 2026 Course Brochure</span>
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-blue-500/20 rounded-xl opacity-0"
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
-              <motion.div
-                whileHover={{ 
-                  scale: 1.05,
-                  rotateY: -5,
-                }}
-                whileTap={{ scale: 0.95 }}
-                style={{ transformStyle: 'preserve-3d' }}
+                Enroll Now
+                <FaArrowRight className="text-xs" />
+              </Link>
+              <Link 
+                to="/contact"
+                className="inline-flex items-center justify-center border border-white/30 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-500"
               >
-                <Link 
-                  to="/courses" 
-                  className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300 text-center block relative group"
-                >
-                  <span className="relative z-10">Book a Free Demo Session</span>
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-white/20 to-blue-100/20 rounded-xl opacity-0"
-                    whileHover={{ opacity: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
+                Contact Us
                 </Link>
               </motion.div>
             </div>
-          </motion.div>
         </div>
       </section>
-      
-      {/* Floating Action Button - Mobile Responsive */}
-      <motion.div
-        className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50"
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      >
-        <FloatingActionButton
-          icon={FaRocket}
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="shadow-2xl w-12 h-12 sm:w-16 sm:h-16"
-        />
-      </motion.div>
-      
-      {/* AI Chatbot */}
-      <AIChatbot 
-        isOpen={isChatbotOpen} 
-        onClose={() => setIsChatbotOpen(false)} 
-      />
     </div>
   )
 }

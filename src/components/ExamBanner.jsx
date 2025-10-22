@@ -77,72 +77,139 @@ const ExamBanner = () => {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
-              className="exam-banner bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white py-2 sm:py-3 px-2 sm:px-4 relative overflow-hidden"
+              className="exam-banner relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
+                borderBottom: '1px solid rgba(212, 175, 55, 0.15)'
+              }}
             >
-      {/* Background shimmer */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12 animate-pulse"></div>
+      {/* Luxury background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.03) 35px, rgba(212, 175, 55, 0.03) 70px)'
+        }}></div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 relative z-10">
-        <div className="flex items-center gap-2 sm:gap-3">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="bg-white/20 rounded-full p-1 sm:p-2"
-          >
-            <FaGift className="text-sm sm:text-lg" />
-          </motion.div>
-          <div>
-            <h3 className="font-bold text-sm sm:text-base md:text-lg">
-              🎉 Special Offer: Write Exam & Get Fee Concession!
-            </h3>
-            <p className="text-xs sm:text-sm opacity-90">
-              Take our free mock test and get up to 50% discount on course fees
-            </p>
-          </div>
-        </div>
+      {/* Animated golden shimmer */}
+      <div className="absolute inset-0 opacity-20">
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%)',
+            transform: 'skewX(-12deg)'
+          }}
+          animate={{
+            x: ['-100%', '200%']
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
-          {/* Timer */}
-          <motion.div
-            className="flex items-center gap-1 sm:gap-2 bg-white/20 rounded-lg px-2 sm:px-4 py-1 sm:py-2 border-2 border-white/30"
-            animate={{
-              boxShadow: [
-                "0 0 0px rgba(255,255,255,0.3)",
-                "0 0 10px rgba(255,255,255,0.5)",
-                "0 0 0px rgba(255,255,255,0.3)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <FaClock className="text-sm sm:text-lg" />
-            <div className="flex items-center gap-1 font-mono text-sm sm:text-lg font-bold">
-              <span className="bg-white/30 rounded px-1 sm:px-2 py-1 min-w-[1.5rem] sm:min-w-[2rem] text-center">
-                {String(timeLeft.hours).padStart(2, "0")}
-              </span>
-              <span className="text-white/80">:</span>
-              <span className="bg-white/30 rounded px-1 sm:px-2 py-1 min-w-[1.5rem] sm:min-w-[2rem] text-center">
-                {String(timeLeft.minutes).padStart(2, "0")}
-              </span>
-              <span className="text-white/80">:</span>
-              <span className="bg-white/30 rounded px-1 sm:px-2 py-1 min-w-[1.5rem] sm:min-w-[2rem] text-center">
-                {String(timeLeft.seconds).padStart(2, "0")}
-              </span>
+      <div className="max-w-7xl mx-auto px-6 lg:px-16 xl:px-24 py-4 sm:py-5 relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+          {/* Left Content */}
+          <div className="flex items-center gap-4">
+            <motion.div
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30"
+            >
+              <FaGift className="text-lg" style={{ color: '#D4AF37' }} />
+            </motion.div>
+            
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
+                <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: '#D4AF37' }}>
+                  Limited Time
+                </span>
+                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
+              </div>
+              
+              <h3 className="text-sm sm:text-base lg:text-lg font-light tracking-wide text-white mb-1">
+                Exclusive Assessment & Fee Concession
+              </h3>
+              
+              <p className="text-xs text-white/50 font-light tracking-wide hidden sm:block">
+                Complimentary evaluation with up to 50% tuition reduction
+              </p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Button */}
-          <motion.button
-            onClick={handleExamClick}
-            className="bg-white text-orange-600 px-3 sm:px-6 py-2 rounded-lg font-bold hover:bg-orange-50 transition-all duration-300 flex items-center gap-1 sm:gap-2 shadow-lg text-sm sm:text-base"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="hidden sm:inline">Take Free Exam</span>
-            <span className="sm:hidden">Free Exam</span>
-            <FaExternalLinkAlt className="text-xs sm:text-sm" />
-          </motion.button>
+          {/* Right Content */}
+          <div className="flex items-center gap-3 sm:gap-4">
+            {/* Premium Timer */}
+            <motion.div
+              className="flex items-center gap-2 px-4 py-2.5 rounded-sm relative"
+              style={{
+                background: 'rgba(212, 175, 55, 0.05)',
+                border: '1px solid rgba(212, 175, 55, 0.2)',
+                backdropFilter: 'blur(10px)'
+              }}
+              animate={{
+                boxShadow: [
+                  '0 0 0px rgba(212, 175, 55, 0)',
+                  '0 0 20px rgba(212, 175, 55, 0.15)',
+                  '0 0 0px rgba(212, 175, 55, 0)',
+                ],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            >
+              <FaClock className="text-sm" style={{ color: '#D4AF37' }} />
+              <div className="flex items-center gap-1.5 font-light text-base tracking-wider">
+                <span className="text-white w-6 text-center">{String(timeLeft.hours).padStart(2, "0")}</span>
+                <span className="text-white/30">:</span>
+                <span className="text-white w-6 text-center">{String(timeLeft.minutes).padStart(2, "0")}</span>
+                <span className="text-white/30">:</span>
+                <span className="text-white w-6 text-center">{String(timeLeft.seconds).padStart(2, "0")}</span>
+              </div>
+            </motion.div>
+
+            {/* Luxury Button */}
+            <motion.button
+              onClick={handleExamClick}
+              className="relative px-6 py-2.5 text-xs sm:text-sm font-medium tracking-[0.15em] uppercase overflow-hidden group"
+              style={{
+                background: 'linear-gradient(135deg, #D4AF37 0%, #C5A028 100%)',
+                color: '#000000'
+              }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Button shine effect */}
+              <motion.div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                style={{
+                  background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)'
+                }}
+                animate={{
+                  x: ['-100%', '100%']
+                }}
+                transition={{
+                  duration: 0.6,
+                  repeat: Infinity,
+                  repeatDelay: 2
+                }}
+              />
+              
+              <span className="relative z-10 flex items-center gap-2">
+                <span className="hidden sm:inline">Begin Assessment</span>
+                <span className="sm:hidden">Start Now</span>
+                <FaExternalLinkAlt className="text-[10px]" />
+              </span>
+            </motion.button>
+          </div>
         </div>
       </div>
     </motion.div>

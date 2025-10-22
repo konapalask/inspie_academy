@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +20,10 @@ html {
 
 body {
   @apply bg-white text-gray-800 antialiased font-sans;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Custom scrollbar */
@@ -39,11 +43,11 @@ body {
   @apply bg-primary-500;
 }
 
-/* Header background with gradient - Normal size */
+/* Header background - Professional Black & White Theme */
 .header-bg {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e0f2fe 100%);
+  background: #ffffff;
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+  border-bottom: 1px solid #e5e7eb;
 }
 
 /* Timer Flash Animation */
@@ -86,18 +90,18 @@ body {
   opacity: 0.1;
 }
 
-/* Academy Name Styling */
+/* Academy Name Styling - Professional theme */
 .academy-name {
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  background: linear-gradient(135deg, #000000, #1f2937);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Hero section background */
+/* Hero section background - Professional Black theme */
 .hero-bg {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  background: linear-gradient(135deg, #000000 0%, #1f2937 50%, #111827 100%);
   position: relative;
   overflow: hidden;
 }
@@ -141,18 +145,101 @@ body {
   background-clip: text;
 }
 
-/* Button hover effects */
+/* Ultra-Premium Button Styles */
 .btn-primary {
-  @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-700 hover:shadow-lg hover:shadow-primary-500/25 hover:-translate-y-1;
+  @apply bg-black text-white px-10 py-5 rounded-none font-medium transition-all duration-500 hover:bg-gray-900 transform;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-secondary {
-  @apply bg-white text-primary-600 px-6 py-3 rounded-lg font-semibold border-2 border-primary-600 transition-all duration-300 hover:bg-primary-600 hover:text-white hover:shadow-lg hover:-translate-y-1;
+  @apply bg-white text-black border border-black px-10 py-5 rounded-none font-medium transition-all duration-500 hover:bg-black hover:text-white transform;
+  letter-spacing: 0.05em;
 }
 
-/* Card hover effects */
-.card-hover {
-  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:shadow-primary-500/10;
+.btn-premium {
+  @apply bg-black text-white px-10 py-5 rounded-none font-medium transition-all duration-500 transform;
+  letter-spacing: 0.08em;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.btn-premium:hover {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Ultra-Premium Typography */
+.text-premium {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+}
+
+.heading-premium {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+/* Ultra-Premium Card Styles */
+.card-premium {
+  @apply bg-white border border-gray-200 transition-all duration-700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-premium:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  border-color: #000000;
+}
+
+/* Luxury Divider */
+.luxury-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #000, transparent);
+  margin: 4rem 0;
+}
+
+/* Premium Gradient Backgrounds */
+.bg-premium-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.bg-premium-dark {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+.bg-premium-light {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Premium Shadows */
+.shadow-premium {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-premium-lg {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
 }
 
 /* Loading animation */
@@ -502,15 +589,22 @@ body {
     border-top: 1px solid #e5e7eb;
   }
   
-  /* Mobile menu improvements */
-  .mobile-menu-item {
-    font-size: 1.5rem; /* 24px */
-    line-height: 1.4;
-    font-weight: 700;
-    padding: 1.5rem;
-    min-height: 72px;
-    letter-spacing: 0.025em;
-  }
+/* Mobile menu improvements */
+.mobile-menu-item {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+  font-weight: 700;
+  padding: 1.5rem;
+  min-height: 72px;
+  letter-spacing: 0.025em;
+}
+
+/* Mobile menu scroll fix */
+.mobile-menu {
+  max-height: 80vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
   
   /* Mobile menu button improvements */
   .mobile-menu-button {
@@ -564,5 +658,243 @@ body {
 @supports not (scroll-behavior: smooth) {
   .smooth-scroll {
     scroll-behavior: auto;
+  }
+}
+
+/* ===================================
+   PREMIUM MOBILE RESPONSIVE ENHANCEMENTS
+   =================================== */
+
+/* Prevent text selection on buttons and interactive elements */
+button, a[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Enhanced Mobile Typography */
+@media (max-width: 768px) {
+  /* Premium heading sizes for mobile */
+  .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+    font-size: clamp(2rem, 10vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+  }
+
+  .text-4xl {
+    font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+  }
+
+  .text-3xl {
+    font-size: clamp(1.5rem, 7vw, 2rem) !important;
+  }
+
+  .text-2xl {
+    font-size: clamp(1.25rem, 6vw, 1.75rem) !important;
+  }
+
+  .text-xl {
+    font-size: clamp(1.125rem, 5vw, 1.5rem) !important;
+  }
+
+  /* Readable body text on mobile */
+  p, li, span {
+    font-size: clamp(0.875rem, 4vw, 1.125rem);
+    line-height: 1.7;
+  }
+
+  /* Premium spacing for mobile sections */
+  .py-32 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .py-24 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .py-20 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .py-16 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Mobile container padding */
+  .px-24, .px-16 {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Mobile gap adjustments */
+  .gap-16, .gap-12 {
+    gap: 2rem !important;
+  }
+
+  .gap-8 {
+    gap: 1.5rem !important;
+  }
+
+  /* Premium buttons on mobile */
+  .btn-primary, .btn-secondary, .btn-premium {
+    padding: 1rem 2rem !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.1em !important;
+    min-height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Card adjustments for mobile */
+  .card-premium {
+    padding: 1.5rem !important;
+  }
+
+  /* Grid adjustments for mobile */
+  .grid-cols-3, .grid-cols-4, .grid-cols-5 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  .lg\\:grid-cols-3, .md\\:grid-cols-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+  }
+
+  /* Better spacing between grid items */
+  .gap-12 {
+    gap: 2rem !important;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+  /* Ultra compact spacing */
+  .py-32 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .py-24 {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  /* Smaller buttons on very small screens */
+  .btn-primary, .btn-secondary {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.625rem !important;
+  }
+
+  /* Compact container */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .px-24, .px-16, .px-8, .px-6 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  button, a, input, select, textarea {
+    min-height: 44px;
+  }
+
+  /* Remove hover states on touch devices */
+  .hover\\:scale-105:hover,
+  .hover\\:scale-110:hover {
+    transform: none;
+  }
+
+  /* Simplify transitions on touch devices */
+  * {
+    transition-duration: 200ms !important;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 896px) and (orientation: landscape) {
+  /* Reduce hero section height in landscape */
+  .hero-bg, .min-h-screen {
+    min-height: auto !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Compact sections in landscape */
+  section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Fix iOS input zoom */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Android specific optimizations */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  /* Optimize for Android Chrome */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Sharper text on high DPI screens */
+  body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  /* Sharper borders */
+  .border, .border-t, .border-b, .border-l, .border-r {
+    border-width: 0.5px;
+  }
+}
+
+/* Remove scroll-to-top button visibility (as requested) */
+.scroll-to-top-btn,
+[class*="scroll-to-top"],
+[class*="back-to-top"] {
+  display: none !important;
+}
+
+/* Ensure full mobile responsiveness for exam banner */
+.exam-banner {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  .exam-banner {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .exam-banner h3 {
+    font-size: 0.875rem !important;
+  }
+
+  .exam-banner p {
+    font-size: 0.75rem !important;
+  }
+
+  .exam-banner button {
+    padding: 0.625rem 1rem !important;
+    font-size: 0.75rem !important;
   }
 }

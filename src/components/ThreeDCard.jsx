@@ -100,13 +100,13 @@ const ThreeDCard = ({
 export const FeatureCard = ({ icon: Icon, title, description, className = "" }) => {
   return (
     <ThreeDCard 
-      className={`p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50 shadow-lg hover:shadow-2xl transition-all duration-300 ${className}`}
+      className={`p-6 rounded-2xl bg-gradient-to-br from-white to-primary-50 shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary-100 ${className}`}
       intensity={15}
       scale={1.02}
     >
       <div className="text-center">
         <motion.div
-          className="w-16 h-16 bg-gradient-to-br from-primary-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4"
+          className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg"
           whileHover={{ 
             rotateY: 180,
             scale: 1.1,
@@ -117,7 +117,7 @@ export const FeatureCard = ({ icon: Icon, title, description, className = "" }) 
         </motion.div>
         
         <motion.h3 
-          className="text-xl font-semibold text-gray-800 mb-2"
+          className="text-xl font-semibold text-secondary-800 mb-2"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
@@ -125,7 +125,7 @@ export const FeatureCard = ({ icon: Icon, title, description, className = "" }) 
         </motion.h3>
         
         <motion.p 
-          className="text-gray-600"
+          className="text-secondary-600"
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
@@ -140,7 +140,7 @@ export const FeatureCard = ({ icon: Icon, title, description, className = "" }) 
 export const TestimonialCard = ({ name, course, score, quote, className = "" }) => {
   return (
     <ThreeDCard 
-      className={`p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 ${className}`}
+      className={`p-6 rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border border-primary-100 ${className}`}
       intensity={12}
       scale={1.03}
     >

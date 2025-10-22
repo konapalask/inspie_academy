@@ -1,406 +1,312 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { 
   FaGraduationCap, 
-  FaUsers, 
   FaTrophy, 
-  FaLightbulb, 
-  FaHeart, 
-  FaStar,
-  FaAward,
-  FaBookOpen,
-  FaRocket,
-  FaBullseye,
-  FaHandshake,
+  FaUsers, 
+  FaChalkboardTeacher,
+  FaArrowRight,
+  FaMinus,
+  FaCheckCircle
 } from 'react-icons/fa'
-import ScrollAnimation from '../components/ScrollAnimation'
 
-const StatCard = ({ icon: Icon, number, label, color }) => (
-  <motion.div
-    className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary-50 to-blue-50 hover:shadow-xl transition-all duration-300 card-hover"
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    whileHover={{ scale: 1.05 }}
-  >
-    <div className={`w-16 h-16 ${color} rounded-full flex items-center justify-center mx-auto mb-4 text-white`}>
-      <Icon size={24} />
-    </div>
-    <div className="text-3xl font-bold text-gray-800 mb-2">{number}</div>
-    <div className="text-gray-600">{label}</div>
-  </motion.div>
-)
-
-export default function About(){
-  const [activeTab, setActiveTab] = useState('mission')
-
-  const tabs = [
-    { id: 'mission', label: 'Mission', icon: FaBullseye },
-    { id: 'vision', label: 'Vision', icon: FaRocket },
-    { id: 'values', label: 'Values', icon: FaHeart }
+export default function About() {
+  const values = [
+    {
+      title: 'Excellence',
+      description: 'Commitment to delivering the highest standards of educational quality and academic achievement'
+    },
+    {
+      title: 'Innovation',
+      description: 'Continuous evolution of teaching methodologies to meet modern educational requirements'
+    },
+    {
+      title: 'Integrity',
+      description: 'Unwavering dedication to ethical practices and transparent educational processes'
+    },
+    {
+      title: 'Growth',
+      description: 'Fostering comprehensive development of students through personalized attention and guidance'
+    }
   ]
 
-  const content = {
-    mission: {
-      title: "Our Mission",
-      description: "To provide world-class education and mentorship that empowers students to achieve their academic dreams and build successful careers.",
-      points: [
-        "Deliver high-quality, affordable education for all aspirants",
-        "Provide personalized attention and mentorship to every student",
-        "Create an environment that fosters learning and growth",
-        "Equip students with skills for competitive exams and life"
-      ]
-    },
-    vision: {
-      title: "Our Vision",
-      description: "To be the leading educational institution that transforms students into confident, well-prepared individuals ready for top colleges and successful careers.",
-      points: [
-        "Become the most trusted coaching institute in the region",
-        "Achieve 100% success rate in competitive exams",
-        "Create a network of successful alumni across top institutions",
-        "Innovate continuously in teaching methodologies"
-      ]
-    },
-    values: {
-      title: "Our Values",
-      description: "We are guided by core values that shape our approach to education and student development.",
-      points: [
-        "Excellence in teaching and student outcomes",
-        "Integrity and transparency in all our dealings",
-        "Innovation in teaching methods and technology",
-        "Commitment to student success and well-being"
-      ]
-    }
-  }
+  const milestones = [
+    { year: '2011', event: 'Academy Established', description: 'Foundation of Inspire Academy with a vision for excellence' },
+    { year: '2015', event: 'Digital Integration', description: 'Introduction of hybrid learning and digital resources' },
+    { year: '2020', event: '5000+ Students', description: 'Milestone achievement in student enrollment' },
+    { year: '2024', event: 'Industry Recognition', description: 'Awarded as Top Educational Institute' }
+  ]
+
+  const features = [
+    'Expert faculty with extensive teaching experience',
+    'Comprehensive study materials and resources',
+    'Regular performance assessments and analytics',
+    'Personalized mentorship and guidance',
+    'State-of-the-art infrastructure and facilities',
+    'Proven track record of consistent results'
+  ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
-            >
-              {/* Header Logo */}
-              <motion.div 
-                className="mb-8 flex justify-center lg:justify-start"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-              >
-                <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/30">
-                  <img 
-                    src="/images/aia logo.png" 
-                    alt="Andhra Inspire Academy Logo" 
-                    className="h-24 sm:h-32 md:h-40 w-auto object-contain filter brightness-110 contrast-110"
-                  />
-                </div>
-              </motion.div>
-              
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">About Inspire Academy - Best Institute for Intermediate Students in Andhra Pradesh</h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto lg:mx-0 mb-6 sm:mb-8">
-          Founded with the vision of nurturing intermediate students, Inspire Academy is the best institute for Class 11 & 12 students in Andhra Pradesh. With 13+ years of experience and 10,000+ students trained, our results-driven curriculum, personalized mentorship, and constant motivation make us the top choice for intermediate students. With expert faculty and advanced digital infrastructure, we prepare every intermediate student to achieve success in NEET, JEE, and EAMCET through consistency, doubt clearance, and comprehensive guidance.
-        </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <FaGraduationCap className="inline mr-2" />
-                  Quality Education
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <FaUsers className="inline mr-2" />
-                  Expert Faculty
-                </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg px-6 py-3">
-                  <FaTrophy className="inline mr-2" />
-                  Proven Results
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Image Content */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
-            >
-              <div className="relative">
-                <div className="absolute inset-0 bg-white/20 rounded-2xl transform rotate-3"></div>
-                <motion.div
-                  className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-2xl"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img 
-                    src="/images/Screenshot 2025-10-19 170157.png" 
-                    alt="Andhra Inspire Academy" 
-                    className="w-full max-w-md h-64 object-cover rounded-xl shadow-lg"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-3">
-                    <p className="text-white text-sm font-semibold">
-                      "Education is the foundation upon which we build our dreams and achieve excellence."
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Logo Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-32 bg-black text-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-col items-center justify-center">
-              {/* Large Logo */}
-              <motion.div 
-                className="mb-8"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="bg-gradient-to-br from-primary-50 to-blue-100 rounded-3xl p-8 shadow-2xl border border-primary-100">
-                  <img 
-                    src="/images/aia logo.png" 
-                    alt="Andhra Inspire Academy Logo" 
-                    className="h-32 sm:h-40 md:h-48 w-auto object-contain mx-auto"
-                  />
-                </div>
-              </motion.div>
-              
-              {/* Academy Name */}
-              <motion.div
-                className="text-center max-w-4xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-800 mb-4 leading-tight">
-                  Andhra Inspire Academy
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-primary-600 to-primary-800 mx-auto mb-6"></div>
-                <p className="text-xl sm:text-2xl text-gray-600 font-medium">
-                  Empowering Dreams • Building Futures • Creating Success
-                </p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission, Vision, Values */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Foundation</h2>
-            <p className="text-xl text-gray-600">The principles that guide our educational approach</p>
-          </motion.div>
-
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {tabs.map((tab, index) => (
-              <motion.button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-3 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? 'bg-primary-600 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-primary-50 hover:text-primary-600'
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <tab.icon />
-                {tab.label}
-              </motion.button>
-            ))}
-          </div>
-
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-2xl shadow-xl p-8 lg:p-12"
+            className="max-w-4xl"
           >
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">{content[activeTab].title}</h3>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">{content[activeTab].description}</p>
+            <div className="inline-flex items-center gap-3 mb-8">
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-white/50">About Us</span>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
-              {content[activeTab].points.map((point, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-start gap-3 p-4 bg-primary-50 rounded-lg"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <FaLightbulb className="text-primary-600 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700">{point}</span>
-                </motion.div>
-              ))}
-            </div>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light mb-8 tracking-tight leading-tight">
+              Shaping <span className="font-semibold">Tomorrow's</span>
+              <br />
+              Leaders Today
+            </h1>
+            
+            <p className="text-lg text-white/70 leading-relaxed font-light max-w-2xl">
+              Inspire Academy has been at the forefront of competitive examination coaching since 2011, 
+              delivering exceptional results through innovative teaching methodologies and unwavering commitment to excellence.
+            </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Statistics */}
-      <section className="py-20 bg-gradient-to-br from-primary-50 to-blue-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Our Achievements</h2>
-            <p className="text-xl text-gray-600">Numbers that speak for our success</p>
-          </motion.div>
+      {/* Mission & Vision */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="grid lg:grid-cols-2 gap-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="inline-flex items-center gap-3 mb-8">
+                <FaMinus className="text-xs" />
+                <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Our Mission</span>
+                </div>
+              
+              <h2 className="text-4xl font-light mb-6 tracking-tight">
+                Empowering <span className="font-semibold">Academic Success</span>
+              </h2>
+              
+              <p className="text-gray-600 leading-relaxed font-light mb-6">
+                To provide world-class coaching that enables students to achieve their academic aspirations 
+                through comprehensive preparation, expert guidance, and continuous support.
+              </p>
+              
+              <p className="text-gray-600 leading-relaxed font-light">
+                We strive to create an environment that nurtures intellectual growth, builds confidence, 
+                and develops the critical thinking skills necessary for success in competitive examinations.
+              </p>
+            </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <StatCard 
-              icon={FaUsers} 
-              number="500+" 
-              label="Students Trained" 
-              color="bg-primary-600" 
-            />
-            <StatCard 
-              icon={FaTrophy} 
-              number="90%" 
-              label="Success Rate" 
-              color="bg-green-600" 
-            />
-            <StatCard 
-              icon={FaBookOpen} 
-              number="1000+" 
-              label="Study Materials" 
-              color="bg-purple-600" 
-            />
-            <StatCard 
-              icon={FaAward} 
-              number="5+" 
-              label="Years Experience" 
-              color="bg-orange-600" 
-            />
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="inline-flex items-center gap-3 mb-8">
+                <FaMinus className="text-xs" />
+                <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Our Vision</span>
+              </div>
+              
+              <h2 className="text-4xl font-light mb-6 tracking-tight">
+                Leading <span className="font-semibold">Educational Excellence</span>
+              </h2>
+              
+              <p className="text-gray-600 leading-relaxed font-light mb-6">
+                To be recognized as the premier educational institution for competitive examination preparation, 
+                setting industry benchmarks in teaching quality and student achievement.
+              </p>
+              
+              <p className="text-gray-600 leading-relaxed font-light">
+                We envision a future where every student has access to exceptional education that transforms 
+                their potential into remarkable achievements and sustainable career success.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
-            <p className="text-xl text-gray-600">What makes us different from other coaching institutes</p>
-          </motion.div>
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: FaUsers, 
-                title: "Small Batch Sizes", 
-                desc: "Maximum 25 students per batch ensuring personalized attention for every student" 
-              },
-              { 
-                icon: FaBookOpen, 
-                title: "Comprehensive Study Material", 
-                desc: "Well-researched study materials, practice papers, and mock tests for effective preparation" 
-              },
-              { 
-                icon: FaTrophy, 
-                title: "Proven Track Record", 
-                desc: "Consistent 90% success rate with students securing admissions in top colleges" 
-              },
-              { 
-                icon: FaHandshake, 
-                title: "Personal Mentorship", 
-                desc: "Individual guidance and support to help students overcome challenges and excel" 
-              },
-              { 
-                icon: FaRocket, 
-                title: "Modern Teaching Methods", 
-                desc: "Innovative teaching techniques using technology and interactive learning methods" 
-              },
-              { 
-                icon: FaGraduationCap, 
-                title: "Quality Education", 
-                desc: "World-class coaching and mentorship for competitive exam preparation" 
-              }
-            ].map((feature, index) => (
+      {/* Core Values */}
+      <section className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Core Values</span>
+              <FaMinus className="text-xs" />
+            </div>
+            
+            <h2 className="text-5xl font-light text-black tracking-tight">
+              Our <span className="font-semibold">Principles</span>
+            </h2>
+                </div>
+              
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {values.map((value, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-white hover:shadow-xl transition-all duration-300 card-hover"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                transition={{ delay: index * 0.15 }}
+                className="text-center"
               >
-                <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 text-white">
-                  <feature.icon size={24} />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+                <h3 className="text-2xl font-medium text-black mb-4 tracking-tight uppercase">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed font-light">
+                  {value.description}
+                </p>
+                <div className="w-12 h-px bg-black mx-auto mt-6"></div>
               </motion.div>
             ))}
+            </div>
+        </div>
+      </section>
+
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
+
+      {/* Timeline */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-3 mb-8">
+              <FaMinus className="text-xs" />
+              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Journey</span>
+              <FaMinus className="text-xs" />
+            </div>
+            
+            <h2 className="text-5xl font-light text-black tracking-tight">
+              Our <span className="font-semibold">Milestones</span>
+            </h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {milestones.map((milestone, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="flex gap-12 pb-16 border-b border-gray-200 mb-16 last:border-0 last:pb-0 last:mb-0"
+              >
+                <div className="text-4xl font-light text-black min-w-[100px]">{milestone.year}</div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-medium text-black mb-3 tracking-tight">{milestone.event}</h3>
+                  <p className="text-gray-600 leading-relaxed font-light">{milestone.description}</p>
+                </div>
+                </motion.div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Luxury Divider */}
+      <div className="luxury-divider"></div>
+
+      {/* Why Choose Us */}
+      <section className="py-32 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+              <div className="inline-flex items-center gap-3 mb-8">
+                <FaMinus className="text-xs" />
+                <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Why Choose Us</span>
+              </div>
+              
+              <h2 className="text-5xl font-light mb-8 tracking-tight">
+                Comprehensive <span className="font-semibold">Excellence</span>
+              </h2>
+              
+              <p className="text-gray-600 leading-relaxed font-light mb-12">
+                Our commitment to educational excellence is reflected in every aspect of our operations, 
+                from curriculum design to student support services.
+              </p>
+
+              <div className="space-y-4">
+                {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start gap-4"
+                  >
+                    <FaMinus className="text-xs mt-2 flex-shrink-0" />
+                    <span className="text-gray-700 font-light">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-black text-white p-16"
+            >
+              <div className="space-y-12">
+                <div>
+                  <div className="text-6xl font-light mb-4">10,000+</div>
+                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Students Trained</div>
+                </div>
+                <div>
+                  <div className="text-6xl font-light mb-4">85%</div>
+                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Success Rate</div>
+                </div>
+                <div>
+                  <div className="text-6xl font-light mb-4">13+</div>
+                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Years Experience</div>
+                </div>
+              </div>
+              </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-600">
-        <div className="max-w-7xl mx-auto px-4 text-center">
+      <section className="py-32 bg-black text-white">
+        <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl font-bold text-white mb-4">Ready to Join Our Success Story?</h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Become part of our community of successful students and achieve your academic dreams.
+            <h2 className="text-5xl font-light mb-8 tracking-tight leading-tight">
+              Ready to <span className="font-semibold">Begin?</span>
+            </h2>
+            
+            <p className="text-lg text-white/70 mb-12 font-light">
+              Join thousands of successful students who chose Inspire Academy for their academic journey
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-primary-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            
+            <Link 
+              to="/admissions"
+              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
+            >
                 Enroll Now
-              </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-primary-600 transition-all duration-300">
-                Contact Us
-              </button>
-            </div>
+              <FaArrowRight className="text-xs" />
+            </Link>
           </motion.div>
         </div>
       </section>
