@@ -169,15 +169,6 @@ export default function Navbar(){
             />
           </motion.div>
           
-          {/* Academy Name - Visible on Mobile */}
-          <div className="flex flex-col lg:hidden mobile-logo-text">
-            <h1 className="text-lg font-bold text-primary-600 leading-tight">
-              Andhra Inspire Academy
-            </h1>
-            <p className="text-xs text-gray-600 leading-tight">
-              Best Institute for Intermediate Students
-            </p>
-          </div>
         </Link>
 
         {/* Desktop Navigation - Improved Spacing */}
@@ -188,6 +179,43 @@ export default function Navbar(){
             </NavLink>
           ))}
         </nav>
+
+        {/* Enroll Button - Visible on All Devices */}
+        <div className="flex items-center gap-2 xl:gap-4">
+          <motion.a
+            href="https://api.whatsapp.com/send?phone=919848628863&text=Hello! I'm interested in enrolling at Inspire Academy. Please provide me with admission details and course information."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 xl:gap-2 bg-green-600 text-white px-3 xl:px-4 py-2 xl:py-2 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300 hover:shadow-lg relative group text-xs xl:text-sm"
+            whileHover={{ 
+              scale: 1.05,
+              rotateY: 5,
+              y: -2,
+            }}
+            whileTap={{ scale: 0.95 }}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            <motion.div
+              className="relative z-10 flex items-center gap-1 xl:gap-2"
+              whileHover={{ rotateY: 10 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FaWhatsapp className="text-xs xl:text-sm" />
+              <span className="hidden xl:inline">Enroll Now</span>
+              <span className="xl:hidden">Enroll</span>
+            </motion.div>
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-green-500/30 to-green-500/30 rounded-lg opacity-0"
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+            <motion.div
+              className="absolute -inset-1 bg-gradient-to-r from-green-400/20 to-green-400/20 rounded-lg blur-sm opacity-0"
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            />
+          </motion.a>
+        </div>
 
         {/* Desktop CTA Buttons with 3D Effects - Mobile Responsive */}
         <div className="hidden lg:flex items-center gap-2 xl:gap-4">
