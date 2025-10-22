@@ -12,6 +12,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Mobile scroll improvements */
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -418,5 +421,72 @@ body {
   
   .three-d-hover:hover {
     transform: none;
+  }
+}
+
+/* Mobile Scroll to Top Button */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.scroll-to-top-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.scroll-to-top-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .scroll-to-top-btn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+  }
+  
+  /* Improve touch scrolling on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Prevent scroll bounce on iOS */
+  html, body {
+    height: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Smooth scroll behavior for all browsers */
+@supports (scroll-behavior: smooth) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Fallback for browsers that don't support smooth scroll */
+@supports not (scroll-behavior: smooth) {
+  .smooth-scroll {
+    scroll-behavior: auto;
   }
 }
