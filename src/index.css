@@ -504,11 +504,12 @@ body {
   
   /* Mobile menu improvements */
   .mobile-menu-item {
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.5;
-    font-weight: 600;
-    padding: 1rem 0.75rem;
-    min-height: 56px;
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.4;
+    font-weight: 700;
+    padding: 1.5rem;
+    min-height: 72px;
+    letter-spacing: 0.025em;
   }
   
   /* Mobile menu button improvements */
@@ -538,6 +539,17 @@ body {
   .mobile-menu-item:hover {
     background-color: rgba(59, 130, 246, 0.1);
     transform: translateX(4px);
+  }
+  
+  /* Enhanced mobile menu text */
+  .mobile-menu-item {
+    color: #1f2937;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mobile-menu-item:hover {
+    color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.1);
   }
 }
 

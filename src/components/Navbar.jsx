@@ -269,7 +269,7 @@ export default function Navbar(){
             transition={{ duration: 0.3 }}
             className="lg:hidden absolute top-full left-0 right-0 bg-white z-50 shadow-lg border-t border-gray-200 mobile-menu"
           >
-            <div className="px-4 py-6 space-y-3">
+            <div className="px-6 py-8 space-y-4">
               {/* Navigation Links */}
               {navItems.map((item, index) => (
                 <motion.div
@@ -281,7 +281,7 @@ export default function Navbar(){
                   <NavLink 
                     to={item.to} 
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block py-4 px-4 text-lg font-semibold rounded-lg hover:bg-primary-50 transition-colors min-h-[56px] flex items-center"
+                    className="block py-6 px-6 text-2xl font-bold rounded-xl hover:bg-primary-50 transition-colors min-h-[72px] flex items-center mobile-menu-item"
                   >
                     {item.label}
                   </NavLink>
@@ -292,9 +292,9 @@ export default function Navbar(){
               <div className="pt-4 border-t border-gray-200 space-y-3">
                 <a 
                   href="tel:9848628863" 
-                  className="flex items-center gap-3 text-primary-600 hover:text-primary-700 transition-colors w-full py-3 px-4 text-lg font-semibold rounded-lg hover:bg-primary-50 min-h-[56px]"
+                  className="flex items-center gap-4 text-primary-600 hover:text-primary-700 transition-colors w-full py-6 px-6 text-2xl font-bold rounded-xl hover:bg-primary-50 min-h-[72px]"
                 >
-                  <FaPhone className="text-lg" />
+                  <FaPhone className="text-2xl" />
                   <span>Call Now</span>
                 </a>
                 <button
@@ -302,9 +302,9 @@ export default function Navbar(){
                     setIsChatbotOpen(true)
                     setIsMobileMenuOpen(false)
                   }}
-                  className="flex items-center gap-3 bg-primary-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-lg min-h-[56px]"
+                  className="flex items-center gap-4 bg-primary-600 text-white px-6 py-6 rounded-xl font-bold hover:bg-primary-700 transition-all duration-300 w-full justify-center text-2xl min-h-[72px]"
                 >
-                  <FaRobot className="text-lg" />
+                  <FaRobot className="text-2xl" />
                   Chatbot
                 </button>
               </div>
