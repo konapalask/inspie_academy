@@ -79,23 +79,23 @@ const ExamBanner = () => {
               exit={{ opacity: 0, y: -50 }}
               className="exam-banner relative overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
-                borderBottom: '1px solid rgba(212, 175, 55, 0.15)'
+                background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+                borderBottom: '1px solid rgba(14, 165, 233, 0.2)'
               }}
             >
       {/* Luxury background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(212, 175, 55, 0.03) 35px, rgba(212, 175, 55, 0.03) 70px)'
+          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(14, 165, 233, 0.03) 35px, rgba(14, 165, 233, 0.03) 70px)'
         }}></div>
       </div>
 
-      {/* Animated golden shimmer */}
+      {/* Animated blue shimmer */}
       <div className="absolute inset-0 opacity-20">
         <motion.div 
           className="absolute top-0 left-0 w-full h-full"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%)',
+            background: 'linear-gradient(90deg, transparent 0%, rgba(14, 165, 233, 0.3) 50%, transparent 100%)',
             transform: 'skewX(-12deg)'
           }}
           animate={{
@@ -123,18 +123,18 @@ const ExamBanner = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 border border-amber-500/30"
+              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/30"
             >
-              <FaGift className="text-lg" style={{ color: '#D4AF37' }} />
+              <FaGift className="text-lg" style={{ color: '#0ea5e9' }} />
             </motion.div>
             
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
-                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
-                <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: '#D4AF37' }}>
+                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #0ea5e9, transparent)' }}></div>
+                <span className="text-[10px] sm:text-xs tracking-[0.3em] uppercase" style={{ color: '#0ea5e9' }}>
                   Limited Time
                 </span>
-                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #D4AF37, transparent)' }}></div>
+                <div className="hidden sm:block w-8 h-px" style={{ background: 'linear-gradient(to right, transparent, #0ea5e9, transparent)' }}></div>
               </div>
               
               <h3 className="text-sm sm:text-base lg:text-lg font-light tracking-wide text-white mb-1">
@@ -153,20 +153,20 @@ const ExamBanner = () => {
             <motion.div
               className="flex items-center gap-2 px-4 py-2.5 rounded-sm relative"
               style={{
-                background: 'rgba(212, 175, 55, 0.05)',
-                border: '1px solid rgba(212, 175, 55, 0.2)',
+                background: 'rgba(14, 165, 233, 0.05)',
+                border: '1px solid rgba(14, 165, 233, 0.2)',
                 backdropFilter: 'blur(10px)'
               }}
               animate={{
                 boxShadow: [
-                  '0 0 0px rgba(212, 175, 55, 0)',
-                  '0 0 20px rgba(212, 175, 55, 0.15)',
-                  '0 0 0px rgba(212, 175, 55, 0)',
+                  '0 0 0px rgba(14, 165, 233, 0)',
+                  '0 0 20px rgba(14, 165, 233, 0.15)',
+                  '0 0 0px rgba(14, 165, 233, 0)',
                 ],
               }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <FaClock className="text-sm" style={{ color: '#D4AF37' }} />
+              <FaClock className="text-sm" style={{ color: '#0ea5e9' }} />
               <div className="flex items-center gap-1.5 font-light text-base tracking-wider">
                 <span className="text-white w-6 text-center">{String(timeLeft.hours).padStart(2, "0")}</span>
                 <span className="text-white/30">:</span>
@@ -181,8 +181,8 @@ const ExamBanner = () => {
               onClick={handleExamClick}
               className="relative px-6 py-2.5 text-xs sm:text-sm font-medium tracking-[0.15em] uppercase overflow-hidden group"
               style={{
-                background: 'linear-gradient(135deg, #D4AF37 0%, #C5A028 100%)',
-                color: '#000000'
+                background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)',
+                color: '#ffffff'
               }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

@@ -75,7 +75,7 @@ export default function App() {
         {!isChatbotOpen && (
           <button
             onClick={() => setIsChatbotOpen(true)}
-            className="bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg transition-transform duration-300 hover:scale-110"
+            className="bg-slate-900 hover:bg-slate-800 text-white p-4 rounded-full shadow-lg transition-transform duration-300 hover:scale-110"
             aria-label="Open chatbot"
           >
             💬

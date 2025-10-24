@@ -123,7 +123,7 @@ export default function Courses() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,17 +150,17 @@ export default function Courses() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-16 bg-gray-50 border-y border-gray-200">
+      <section className="py-16 bg-slate-50 border-y border-slate-200">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="flex flex-wrap justify-center gap-6">
             {categories.map((category) => (
               <button
                 key={category.value}
                 onClick={() => setSelectedCategory(category.value)}
-                className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 ${
+                className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 rounded-lg ${
                   selectedCategory === category.value
-                    ? 'bg-black text-white'
-                    : 'bg-white border border-gray-300 text-gray-700 hover:border-black'
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-white border border-slate-300 text-slate-700 hover:border-slate-900'
                 }`}
               >
                 {category.label}
@@ -181,45 +181,45 @@ export default function Courses() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.8 }}
-                className="grid lg:grid-cols-2 gap-16 border-b border-gray-200 pb-20 last:border-0"
+                className="grid lg:grid-cols-2 gap-16 border-b border-slate-200 pb-20 last:border-0"
               >
                 {/* Left Column - Info */}
                 <div>
                   <div className="inline-flex items-center gap-3 mb-6">
                     <FaMinus className="text-xs" />
-                    <span className="text-xs tracking-[0.2em] uppercase text-gray-500">{course.subtitle}</span>
+                    <span className="text-xs tracking-[0.2em] uppercase text-slate-500">{course.subtitle}</span>
                   </div>
 
                   <h2 className="text-4xl sm:text-5xl font-light mb-6 tracking-tight">
                     {course.title}
                   </h2>
 
-                  <p className="text-gray-600 leading-relaxed font-light mb-8">
+                  <p className="text-slate-600 leading-relaxed font-light mb-8">
                     {course.description}
                   </p>
 
                   {/* Course Details */}
-                  <div className="grid grid-cols-3 gap-6 mb-12 py-8 border-y border-gray-200">
+                  <div className="grid grid-cols-3 gap-6 mb-12 py-8 border-y border-slate-200">
                     <div>
-                      <div className="flex items-center gap-2 text-gray-500 mb-2">
+                      <div className="flex items-center gap-2 text-slate-500 mb-2">
                         <FaClock className="text-xs" />
                         <span className="text-xs tracking-wider uppercase">Duration</span>
                       </div>
-                      <div className="font-medium text-black">{course.duration}</div>
+                      <div className="font-medium text-slate-900">{course.duration}</div>
                     </div>
                     <div>
-                      <div className="flex items-center gap-2 text-gray-500 mb-2">
+                      <div className="flex items-center gap-2 text-slate-500 mb-2">
                         <FaUsers className="text-xs" />
                         <span className="text-xs tracking-wider uppercase">Batch Size</span>
                       </div>
-                      <div className="font-medium text-black">{course.batchSize}</div>
+                      <div className="font-medium text-slate-900">{course.batchSize}</div>
                     </div>
                     <div>
-                      <div className="flex items-center gap-2 text-gray-500 mb-2">
+                      <div className="flex items-center gap-2 text-slate-500 mb-2">
                         <FaBook className="text-xs" />
                         <span className="text-xs tracking-wider uppercase">Sessions</span>
                       </div>
-                      <div className="font-medium text-black">{course.sessions}</div>
+                      <div className="font-medium text-slate-900">{course.sessions}</div>
                     </div>
                   </div>
 
@@ -227,13 +227,13 @@ export default function Courses() {
                   <div className="mb-8">
                     <div className="flex items-baseline gap-2 mb-2">
                       <span className="text-5xl font-light">{course.price}</span>
-                      <span className="text-sm text-gray-500 tracking-wider">{course.period}</span>
+                      <span className="text-sm text-slate-500 tracking-wider">{course.period}</span>
                     </div>
                   </div>
 
                   <Link
                     to="/admissions"
-                    className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500"
+                    className="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-slate-800 transition-all duration-500 rounded-lg"
                   >
                     Enroll Now
                     <FaArrowRight className="text-xs" />
@@ -242,25 +242,25 @@ export default function Courses() {
 
                 {/* Right Column - Features */}
                 <div>
-                  <div className="bg-gray-50 p-10 h-full">
-                    <h3 className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-8">Program Features</h3>
+                  <div className="bg-slate-50 p-10 h-full rounded-xl">
+                    <h3 className="text-xs tracking-[0.2em] uppercase text-slate-500 mb-8">Program Features</h3>
                     
                     <div className="space-y-4 mb-12">
                       {course.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <FaMinus className="text-xs mt-2 flex-shrink-0" />
-                          <span className="text-sm text-gray-700 font-light leading-relaxed">{feature}</span>
+                          <span className="text-sm text-slate-700 font-light leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="pt-8 border-t border-gray-200">
-                      <h3 className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-6">Key Highlights</h3>
+                    <div className="pt-8 border-t border-slate-200">
+                      <h3 className="text-xs tracking-[0.2em] uppercase text-slate-500 mb-6">Key Highlights</h3>
                       <div className="space-y-3">
                         {course.highlights.map((highlight, idx) => (
                           <div key={idx} className="flex items-start gap-3">
-                            <FaCheckCircle className="text-black mt-1 flex-shrink-0" />
-                            <span className="text-sm text-gray-700 font-light">{highlight}</span>
+                            <FaCheckCircle className="text-slate-900 mt-1 flex-shrink-0" />
+                            <span className="text-sm text-slate-700 font-light">{highlight}</span>
                           </div>
                         ))}
                       </div>
@@ -274,7 +274,7 @@ export default function Courses() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -293,14 +293,14 @@ export default function Courses() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link 
                 to="/admissions"
-                className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
+                className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-slate-100 transition-all duration-500 rounded-lg"
               >
                 Enroll Now
                 <FaArrowRight className="text-xs" />
               </Link>
               <Link 
                 to="/contact"
-                className="inline-flex items-center justify-center border border-white/30 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-500"
+                className="inline-flex items-center justify-center border border-white/30 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-slate-900 transition-all duration-500 rounded-lg"
               >
                 Contact Us
               </Link>

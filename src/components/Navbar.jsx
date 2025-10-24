@@ -38,7 +38,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-white border-b border-gray-200' : 'bg-white/95 backdrop-blur-sm'
+          isScrolled ? 'bg-white/95 border-b border-slate-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
         }`}
       >
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
@@ -51,8 +51,8 @@ export default function Navbar() {
                 className="h-12 w-auto object-contain"
               />
               <div className="hidden sm:block">
-                <div className="text-xl font-semibold tracking-tight text-black">Inspire Academy</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-gray-500">Education Excellence</div>
+                <div className="text-xl font-semibold tracking-tight text-slate-900">Inspire Academy</div>
+                <div className="text-[10px] tracking-[0.2em] uppercase text-slate-500">Education Excellence</div>
               </div>
             </Link>
 
@@ -65,8 +65,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `px-6 py-2 text-xs tracking-[0.1em] uppercase font-medium transition-all duration-300 ${
                       isActive
-                        ? 'text-black'
-                        : 'text-gray-500 hover:text-black'
+                        ? 'text-slate-900'
+                        : 'text-slate-500 hover:text-slate-900'
                     }`
                   }
                 >
@@ -79,7 +79,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 to="/admissions"
-                className="bg-black text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500"
+                className="bg-slate-900 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:bg-slate-800 transition-all duration-500 rounded-lg"
               >
                 Enroll Now
               </Link>
@@ -88,7 +88,7 @@ export default function Navbar() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 text-black hover:bg-gray-100 transition-colors"
+              className="lg:hidden p-2 text-slate-900 hover:bg-slate-100 transition-colors rounded-lg"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
@@ -119,8 +119,8 @@ export default function Navbar() {
                     <RouterNavLink
                       to={item.to}
                       className={({ isActive }) =>
-                        `block px-6 py-6 text-2xl font-light tracking-tight border-b border-gray-100 transition-all duration-300 ${
-                          isActive ? 'text-black' : 'text-gray-500'
+                        `block px-6 py-6 text-2xl font-light tracking-tight border-b border-slate-100 transition-all duration-300 ${
+                          isActive ? 'text-slate-900' : 'text-slate-500'
                         }`
                       }
                     >
@@ -138,7 +138,7 @@ export default function Navbar() {
               >
                 <Link
                   to="/admissions"
-                  className="block w-full bg-black text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium"
+                  className="block w-full bg-slate-900 text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium rounded-lg"
                 >
                   Enroll Now
                 </Link>

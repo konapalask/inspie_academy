@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaMinus, FaArrowUp } from 'react-icons/fa'
+import { FaMinus, FaArrowUp, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -29,7 +29,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-black text-white">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer */}
       <div className="container mx-auto px-6 lg:px-16 xl:px-24 py-20">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-16">
@@ -42,28 +42,48 @@ export default function Footer() {
                 className="h-12 w-auto object-contain"
               />
               <div>
-                <div className="text-xl font-semibold tracking-tight">Inspire Academy</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-white/50">Education Excellence</div>
+                <div className="text-xl font-bold tracking-tight">Inspire Academy</div>
+                <div className="text-sm tracking-wide uppercase text-blue-400">Education Excellence</div>
               </div>
             </div>
             
-            <p className="text-white/70 font-light leading-relaxed mb-8 max-w-sm">
+            <p className="text-white/80 font-light leading-relaxed mb-8 max-w-sm">
               Leading coaching institute for NEET, JEE, and EAMCET preparation with proven track record of excellence.
             </p>
 
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start gap-3">
-                <FaMinus className="text-xs mt-1.5 flex-shrink-0" />
-                <span className="text-white/70 font-light">Near Benz Circle, Vijayawada, Andhra Pradesh</span>
+            {/* Contact Info */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3">
+                <FaMapMarkerAlt className="text-blue-400 text-sm" />
+                <span className="text-white/80 font-light">Near Benz Circle, Vijayawada, Andhra Pradesh</span>
               </div>
-              <div className="flex items-start gap-3">
-                <FaMinus className="text-xs mt-1.5 flex-shrink-0" />
-                <a href="tel:+919848628863" className="text-white/70 font-light hover:text-white transition-colors">+91 98486 28863</a>
+              <div className="flex items-center gap-3">
+                <FaPhone className="text-green-400 text-sm" />
+                <a href="tel:+919848628863" className="text-white/80 font-light hover:text-white transition-colors">+91 98486 28863</a>
               </div>
-              <div className="flex items-start gap-3">
-                <FaMinus className="text-xs mt-1.5 flex-shrink-0" />
-                <a href="mailto:info@inspireacademy.in" className="text-white/70 font-light hover:text-white transition-colors">info@inspireacademy.in</a>
+              <div className="flex items-center gap-3">
+                <FaEnvelope className="text-yellow-400 text-sm" />
+                <a href="mailto:info@inspireacademy.in" className="text-white/80 font-light hover:text-white transition-colors">info@inspireacademy.in</a>
               </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex gap-4">
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                <FaFacebook className="text-sm" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-400 transition-colors duration-300">
+                <FaTwitter className="text-sm" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-pink-600 transition-colors duration-300">
+                <FaInstagram className="text-sm" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors duration-300">
+                <FaLinkedin className="text-sm" />
+              </a>
+              <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300">
+                <FaYoutube className="text-sm" />
+              </a>
             </div>
           </div>
 
@@ -75,7 +95,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     to={link.to}
-                    className="text-white/70 font-light hover:text-white transition-colors text-sm"
+                    className="text-white/80 font-light hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -92,7 +112,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     to={link.to}
-                    className="text-white/70 font-light hover:text-white transition-colors text-sm"
+                    className="text-white/80 font-light hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -109,7 +129,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     to={link.to}
-                    className="text-white/70 font-light hover:text-white transition-colors text-sm"
+                    className="text-white/80 font-light hover:text-white transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -121,20 +141,25 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 bg-slate-800/50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/50 text-xs tracking-wider">
-              © {new Date().getFullYear()} Inspire Academy. All rights reserved.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-white/70 text-sm mb-2">
+                © {new Date().getFullYear()} Inspire Academy. All rights reserved.
+              </p>
+              <p className="text-white/50 text-xs">
+                Empowering students to achieve their academic dreams since 2011
+              </p>
+            </div>
             
             <button
               onClick={scrollToTop}
-              className="border border-white/30 px-6 py-2 text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-500"
+              className="group bg-white/10 hover:bg-white/20 border border-white/30 px-6 py-3 text-sm font-medium tracking-wide uppercase hover:bg-white hover:text-slate-900 transition-all duration-500 rounded-xl backdrop-blur-sm"
               aria-label="Scroll to top"
             >
-              <FaArrowUp className="inline mr-2 text-xs" />
-              Top
+              <FaArrowUp className="inline mr-2 text-sm group-hover:-translate-y-1 transition-transform duration-300" />
+              Back to Top
             </button>
           </div>
         </div>

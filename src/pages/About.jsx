@@ -50,7 +50,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -147,7 +147,7 @@ export default function About() {
               <FaMinus className="text-xs" />
             </div>
             
-            <h2 className="text-5xl font-light text-black tracking-tight">
+            <h2 className="text-5xl font-light text-slate-900 tracking-tight">
               Our <span className="font-semibold">Principles</span>
             </h2>
                 </div>
@@ -162,13 +162,13 @@ export default function About() {
                 transition={{ delay: index * 0.15 }}
                 className="text-center"
               >
-                <h3 className="text-2xl font-medium text-black mb-4 tracking-tight uppercase">
+                <h3 className="text-2xl font-medium text-slate-900 mb-4 tracking-tight uppercase">
                   {value.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed font-light">
+                <p className="text-slate-600 leading-relaxed font-light">
                   {value.description}
                 </p>
-                <div className="w-12 h-px bg-black mx-auto mt-6"></div>
+                <div className="w-12 h-px bg-slate-900 mx-auto mt-6"></div>
               </motion.div>
             ))}
             </div>
@@ -188,7 +188,7 @@ export default function About() {
               <FaMinus className="text-xs" />
             </div>
             
-            <h2 className="text-5xl font-light text-black tracking-tight">
+            <h2 className="text-5xl font-light text-slate-900 tracking-tight">
               Our <span className="font-semibold">Milestones</span>
             </h2>
           </div>
@@ -201,12 +201,12 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex gap-12 pb-16 border-b border-gray-200 mb-16 last:border-0 last:pb-0 last:mb-0"
+                className="flex gap-12 pb-16 border-b border-slate-200 mb-16 last:border-0 last:pb-0 last:mb-0"
               >
-                <div className="text-4xl font-light text-black min-w-[100px]">{milestone.year}</div>
+                <div className="text-4xl font-light text-slate-900 min-w-[100px]">{milestone.year}</div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-medium text-black mb-3 tracking-tight">{milestone.event}</h3>
-                  <p className="text-gray-600 leading-relaxed font-light">{milestone.description}</p>
+                  <h3 className="text-2xl font-medium text-slate-900 mb-3 tracking-tight">{milestone.event}</h3>
+                  <p className="text-slate-600 leading-relaxed font-light">{milestone.description}</p>
                 </div>
                 </motion.div>
               ))}
@@ -235,7 +235,7 @@ export default function About() {
                 Comprehensive <span className="font-semibold">Excellence</span>
               </h2>
               
-              <p className="text-gray-600 leading-relaxed font-light mb-12">
+              <p className="text-slate-600 leading-relaxed font-light mb-12">
                 Our commitment to educational excellence is reflected in every aspect of our operations, 
                 from curriculum design to student support services.
               </p>
@@ -251,7 +251,7 @@ export default function About() {
                     className="flex items-start gap-4"
                   >
                     <FaMinus className="text-xs mt-2 flex-shrink-0" />
-                    <span className="text-gray-700 font-light">{feature}</span>
+                    <span className="text-slate-700 font-light">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -262,7 +262,7 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-black text-white p-16"
+              className="bg-slate-900 text-white p-16 rounded-xl"
             >
               <div className="space-y-12">
                 <div>
@@ -284,7 +284,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -302,7 +302,7 @@ export default function About() {
             
             <Link 
               to="/admissions"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
+              className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-slate-100 transition-all duration-500 rounded-lg"
             >
                 Enroll Now
               <FaArrowRight className="text-xs" />
