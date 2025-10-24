@@ -128,13 +128,13 @@ export default function Home() {
         <ExamBanner />
       </div>
 
-      {/* Hero Section - Premium Education */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-hidden min-h-screen flex items-center">
+      {/* Hero Section - Vibrant Modern Education */}
+      <section className="relative bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white overflow-hidden min-h-screen flex items-center">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cyan-500/5 rounded-full blur-2xl animate-pulse delay-2000"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange-500/10 rounded-full blur-2xl animate-pulse delay-2000"></div>
         </div>
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-16 xl:px-24 py-20 sm:py-32 lg:py-48 relative z-10 w-full">
@@ -162,7 +162,7 @@ export default function Home() {
                 >
                   Transform Your
                   <br />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                     Academic Future
                   </span>
                 </motion.h1>
@@ -175,7 +175,7 @@ export default function Home() {
                   className="text-xl lg:text-2xl text-white/80 mb-12 leading-relaxed max-w-2xl font-light"
                 >
                   Join India's premier coaching institute for NEET, JEE, and EAMCET. 
-                  <span className="text-blue-400 font-semibold"> 85% success rate</span> with expert faculty and proven methodologies.
+                  <span className="text-purple-400 font-semibold"> 85% success rate</span> with expert faculty and proven methodologies.
                 </motion.p>
 
                 {/* Key Stats */}
@@ -186,15 +186,15 @@ export default function Home() {
                   className="grid grid-cols-3 gap-8 mb-12"
                 >
                   <div className="text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-blue-400 mb-2">10K+</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">10K+</div>
                     <div className="text-sm text-white/60 uppercase tracking-wide">Students</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-green-400 mb-2">85%</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-pink-400 mb-2">85%</div>
                     <div className="text-sm text-white/60 uppercase tracking-wide">Success Rate</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-purple-400 mb-2">13+</div>
+                    <div className="text-3xl lg:text-4xl font-bold text-orange-400 mb-2">13+</div>
                     <div className="text-sm text-white/60 uppercase tracking-wide">Years</div>
                   </div>
                 </motion.div>
@@ -208,7 +208,7 @@ export default function Home() {
                 >
                   <Link 
                     to="/admissions"
-                    className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 font-semibold text-sm tracking-wide hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 font-semibold text-sm tracking-wide hover:from-purple-700 hover:to-pink-700 transition-all duration-300 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                   >
                     Start Your Journey
                     <FaArrowRight className="text-sm group-hover:translate-x-1 transition-transform duration-300" />
@@ -235,14 +235,14 @@ export default function Home() {
                   {/* Main Card */}
                   <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto mb-4 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <FaGraduationCap className="text-2xl text-white" />
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2">NEET 2024</h3>
                       <p className="text-white/70 text-sm mb-4">Medical Entrance Preparation</p>
                       <div className="flex justify-between text-sm">
                         <span className="text-white/60">Success Rate</span>
-                        <span className="text-green-400 font-bold">92%</span>
+                        <span className="text-pink-400 font-bold">92%</span>
                       </div>
                     </div>
                   </div>
@@ -251,7 +251,7 @@ export default function Home() {
                   <motion.div
                     animate={{ y: [-10, 10, -10] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                    className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg"
                   >
                     Top Rankers
                   </motion.div>
@@ -259,7 +259,7 @@ export default function Home() {
                   <motion.div
                     animate={{ y: [10, -10, 10] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute -bottom-4 -left-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg"
+                    className="absolute -bottom-4 -left-4 bg-gradient-to-r from-purple-500 to-indigo-500 text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg"
                   >
                     Expert Faculty
                   </motion.div>
@@ -272,7 +272,7 @@ export default function Home() {
       </section>
 
       {/* Comprehensive Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -288,10 +288,10 @@ export default function Home() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { number: '10,000+', label: 'Students Trained', icon: '👨‍🎓', color: 'from-blue-500 to-cyan-500' },
-              { number: '85%', label: 'Success Rate', icon: '🏆', color: 'from-green-500 to-emerald-500' },
-              { number: '500+', label: 'Top Rankers', icon: '🥇', color: 'from-yellow-500 to-orange-500' },
-              { number: '13+', label: 'Years Experience', icon: '📚', color: 'from-purple-500 to-pink-500' }
+              { number: '10,000+', label: 'Students Trained', icon: '👨‍🎓', color: 'from-purple-500 to-pink-500' },
+              { number: '85%', label: 'Success Rate', icon: '🏆', color: 'from-pink-500 to-orange-500' },
+              { number: '500+', label: 'Top Rankers', icon: '🥇', color: 'from-orange-500 to-yellow-500' },
+              { number: '13+', label: 'Years Experience', icon: '📚', color: 'from-indigo-500 to-purple-500' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -316,7 +316,7 @@ export default function Home() {
       <div className="luxury-divider"></div>
 
       {/* Features Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section className="py-32 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="text-center mb-20">
             <motion.div 
@@ -325,9 +325,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-3 mb-8"
             >
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm font-semibold tracking-wide uppercase text-blue-600">Our Strengths</span>
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span className="text-sm font-semibold tracking-wide uppercase text-purple-600">Our Strengths</span>
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
             </motion.div>
 
             <motion.h2 
@@ -336,7 +336,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-5xl lg:text-6xl font-bold text-slate-900 mb-8"
             >
-              Why Choose <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Inspire Academy</span>
+              Why Choose <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Inspire Academy</span>
             </motion.h2>
             
             <motion.p
@@ -359,12 +359,12 @@ export default function Home() {
                 transition={{ delay: index * 0.1, duration: 0.8 }}
                 className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="text-2xl text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{feature.description}</p>
-                <div className="mt-6 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                <div className="mt-6 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
               </motion.div>
             ))}
           </div>
@@ -384,9 +384,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-3 mb-8"
             >
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-              <span className="text-sm font-semibold tracking-wide uppercase text-green-600">Our Programs</span>
-              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
+              <span className="text-sm font-semibold tracking-wide uppercase text-pink-600">Our Programs</span>
+              <div className="w-2 h-2 bg-pink-500 rounded-full"></div>
             </motion.div>
             
             <motion.h2 
@@ -395,7 +395,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-5xl lg:text-6xl font-bold text-slate-900 mb-8"
             >
-              Academic <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Excellence</span>
+              Academic <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">Excellence</span>
             </motion.h2>
             
             <motion.p
@@ -420,8 +420,8 @@ export default function Home() {
                   onClick={() => setActiveCategory(category.value)}
                   className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 rounded-lg ${
                     activeCategory === category.value
-                      ? 'bg-slate-900 text-white'
-                      : 'bg-white border border-slate-300 text-slate-700 hover:border-slate-900'
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      : 'bg-white border border-purple-300 text-purple-700 hover:border-purple-600'
                   }`}
                 >
                   {category.label}
@@ -443,11 +443,11 @@ export default function Home() {
                   className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-slate-100"
                 >
                   {/* Course Header */}
-                  <div className="relative p-8 bg-gradient-to-br from-slate-50 to-blue-50">
+                  <div className="relative p-8 bg-gradient-to-br from-purple-50 to-pink-50">
                     <div className="absolute top-4 right-4">
-                      <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      <div className="w-3 h-3 bg-pink-500 rounded-full animate-pulse"></div>
                     </div>
-                    <div className="text-sm font-semibold text-blue-600 mb-3 uppercase tracking-wide">{course.subtitle}</div>
+                    <div className="text-sm font-semibold text-purple-600 mb-3 uppercase tracking-wide">{course.subtitle}</div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-4">{course.title}</h3>
                     <div className="flex items-baseline gap-2 mb-6">
                       <span className="text-4xl font-bold text-slate-900">{course.price}</span>
@@ -455,11 +455,11 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-4 text-sm text-slate-600">
                       <div className="flex items-center gap-2">
-                        <FaClock className="text-blue-500" />
+                        <FaClock className="text-purple-500" />
                         <span>{course.duration}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <FaUsers className="text-green-500" />
+                        <FaUsers className="text-pink-500" />
                         <span>{course.students}</span>
                       </div>
                     </div>
@@ -471,7 +471,7 @@ export default function Home() {
                     <div className="space-y-3 mb-8">
                       {course.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 flex-shrink-0"></div>
                           <span className="text-sm text-slate-600">{feature}</span>
                         </div>
                       ))}
@@ -479,7 +479,7 @@ export default function Home() {
 
                     <Link 
                       to="/admissions"
-                      className="block w-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center py-4 font-semibold rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                      className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center py-4 font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
                     >
                       Enroll Now
                     </Link>
@@ -494,7 +494,7 @@ export default function Home() {
       <div className="luxury-divider"></div>
 
       {/* Testimonials Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 to-pink-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="text-center mb-20">
             <motion.div 
@@ -503,9 +503,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-3 mb-8"
             >
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-              <span className="text-sm font-semibold tracking-wide uppercase text-yellow-400">Success Stories</span>
-              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
+              <span className="text-sm font-semibold tracking-wide uppercase text-orange-400">Success Stories</span>
+              <div className="w-2 h-2 bg-orange-400 rounded-full"></div>
             </motion.div>
 
             <motion.h2 
@@ -514,7 +514,7 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-5xl lg:text-6xl font-bold mb-8"
             >
-              Student <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Achievements</span>
+              Student <span className="bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">Achievements</span>
             </motion.h2>
             
             <motion.p
@@ -538,7 +538,7 @@ export default function Home() {
                 className="group bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.name.charAt(0)}
                   </div>
                   <div>
@@ -548,7 +548,7 @@ export default function Home() {
                 </div>
                 
                 <div className="mb-6">
-                  <div className="text-2xl font-bold text-yellow-400 mb-1">{testimonial.achievement}</div>
+                  <div className="text-2xl font-bold text-orange-400 mb-1">{testimonial.achievement}</div>
                   <div className="text-sm text-white/70">{testimonial.institution}</div>
                 </div>
                 
@@ -556,7 +556,7 @@ export default function Home() {
                   "{testimonial.quote}"
                 </p>
                 
-                <div className="mt-6 flex text-yellow-400">
+                <div className="mt-6 flex text-orange-400">
                   {[...Array(5)].map((_, i) => (
                     <FaTrophy key={i} className="text-sm" />
                   ))}
@@ -568,7 +568,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -587,7 +587,7 @@ export default function Home() {
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-4 rounded-xl text-slate-900 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-white/50"
               />
-              <button className="bg-white text-blue-600 px-8 py-4 font-semibold rounded-xl hover:bg-slate-100 transition-colors duration-300">
+              <button className="bg-white text-purple-600 px-8 py-4 font-semibold rounded-xl hover:bg-slate-100 transition-colors duration-300">
                 Subscribe
               </button>
             </div>
@@ -596,7 +596,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="max-w-5xl mx-auto text-center">
             <motion.div
@@ -611,7 +611,7 @@ export default function Home() {
               </div>
               
               <h2 className="text-5xl lg:text-6xl font-bold mb-8">
-                Begin Your <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Academic Journey</span>
+                Begin Your <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Academic Journey</span>
               </h2>
               
               <p className="text-xl text-white/80 mb-12 max-w-3xl mx-auto">
@@ -628,7 +628,7 @@ export default function Home() {
             >
               <Link 
                 to="/admissions"
-                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-12 py-6 font-semibold text-lg rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
+                className="group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 font-semibold text-lg rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1"
               >
                 Start Your Journey
                 <FaArrowRight className="text-lg group-hover:translate-x-1 transition-transform duration-300" />

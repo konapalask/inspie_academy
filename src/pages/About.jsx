@@ -50,7 +50,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-slate-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,7 +138,7 @@ export default function About() {
       <div className="luxury-divider"></div>
 
       {/* Core Values */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-3 mb-8">
@@ -168,7 +168,7 @@ export default function About() {
                 <p className="text-slate-600 leading-relaxed font-light">
                   {value.description}
                 </p>
-                <div className="w-12 h-px bg-slate-900 mx-auto mt-6"></div>
+                <div className="w-12 h-px bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6"></div>
               </motion.div>
             ))}
             </div>
@@ -218,7 +218,7 @@ export default function About() {
       <div className="luxury-divider"></div>
 
       {/* Why Choose Us */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div 
@@ -262,7 +262,7 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-slate-900 text-white p-16 rounded-xl"
+              className="bg-gradient-to-br from-purple-900 to-pink-900 text-white p-16 rounded-xl"
             >
               <div className="space-y-12">
                 <div>
@@ -284,7 +284,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-slate-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -302,7 +302,7 @@ export default function About() {
             
             <Link 
               to="/admissions"
-              className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-slate-100 transition-all duration-500 rounded-lg"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
             >
                 Enroll Now
               <FaArrowRight className="text-xs" />

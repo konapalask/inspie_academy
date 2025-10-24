@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-800 antialiased font-sans;
+  @apply bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 text-gray-800 antialiased font-sans;
   line-height: 1.7;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
@@ -36,33 +36,33 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-400 rounded-full;
+  @apply bg-gradient-to-b from-purple-500 to-pink-500 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500;
+  @apply bg-gradient-to-b from-purple-600 to-pink-600;
 }
 
-/* Header background - Professional Corporate Theme */
+/* Header background - Vibrant Modern Theme */
 .header-bg {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 1px 3px rgba(168, 85, 247, 0.1);
 }
 
 /* Timer Flash Animation */
 @keyframes flash {
-  0% { background: linear-gradient(to right, #fbbf24, #f59e0b, #dc2626); }
+  0% { background: linear-gradient(to right, #a855f7, #ec4899, #f97316); }
   50% { background: linear-gradient(to right, #ffffff, #ffffff, #ffffff); }
-  100% { background: linear-gradient(to right, #fbbf24, #f59e0b, #dc2626); }
+  100% { background: linear-gradient(to right, #a855f7, #ec4899, #f97316); }
 }
 
-/* Enhanced Logo Styling - Compact Size */
+/* Enhanced Logo Styling - Vibrant Theme */
 .logo-container {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #fef7ff 100%);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.15);
   transition: all 0.3s ease;
   position: relative;
 }
@@ -74,7 +74,7 @@ body {
   left: -2px;
   right: -2px;
   bottom: -2px;
-  background: linear-gradient(135deg, #3b82f6, #1e40af, #60a5fa);
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
   border-radius: inherit;
   z-index: -1;
   opacity: 0;
@@ -82,8 +82,8 @@ body {
 }
 
 .logo-container:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 3px 15px rgba(59, 130, 246, 0.25);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 3px 15px rgba(168, 85, 247, 0.25);
   transform: translateY(-1px);
 }
 
@@ -91,18 +91,18 @@ body {
   opacity: 0.1;
 }
 
-/* Academy Name Styling - Professional theme */
+/* Academy Name Styling - Vibrant theme */
 .academy-name {
-  background: linear-gradient(135deg, #000000, #1f2937);
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-shadow: 0 2px 4px rgba(168, 85, 247, 0.1);
 }
 
-/* Hero section background - Professional Corporate theme */
+/* Hero section background - Vibrant Modern theme */
 .hero-bg {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   position: relative;
   overflow: hidden;
 }
@@ -140,17 +140,17 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #1e40af, #3b82f6, #60a5fa);
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Professional Button Styles */
+/* Vibrant Button Styles */
 .btn-primary {
-  @apply bg-slate-900 text-white px-10 py-5 rounded-lg font-medium transition-all duration-500 hover:bg-slate-800 transform;
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 rounded-lg font-medium transition-all duration-500 hover:from-purple-700 hover:to-pink-700 transform;
   letter-spacing: 0.05em;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(168, 85, 247, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -171,18 +171,18 @@ body {
 }
 
 .btn-secondary {
-  @apply bg-white text-slate-900 border border-slate-300 px-10 py-5 rounded-lg font-medium transition-all duration-500 hover:bg-slate-900 hover:text-white hover:border-slate-900 transform;
+  @apply bg-white text-purple-600 border border-purple-300 px-10 py-5 rounded-lg font-medium transition-all duration-500 hover:bg-purple-600 hover:text-white hover:border-purple-600 transform;
   letter-spacing: 0.05em;
 }
 
 .btn-premium {
-  @apply bg-slate-900 text-white px-10 py-5 rounded-lg font-medium transition-all duration-500 transform;
+  @apply bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white px-10 py-5 rounded-lg font-medium transition-all duration-500 transform;
   letter-spacing: 0.08em;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
 }
 
 .btn-premium:hover {
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 30px 60px rgba(168, 85, 247, 0.4);
   transform: translateY(-2px);
 }
 
@@ -202,45 +202,45 @@ body {
   text-transform: uppercase;
 }
 
-/* Professional Card Styles */
+/* Vibrant Card Styles */
 .card-premium {
-  @apply bg-white border border-slate-200 transition-all duration-700 rounded-xl;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  @apply bg-white border border-purple-200 transition-all duration-700 rounded-xl;
+  box-shadow: 0 4px 6px rgba(168, 85, 247, 0.1);
 }
 
 .card-premium:hover {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2);
   transform: translateY(-8px);
-  border-color: #334155;
+  border-color: #a855f7;
 }
 
-/* Professional Divider */
+/* Vibrant Divider */
 .luxury-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #334155, transparent);
+  background: linear-gradient(90deg, transparent, #a855f7, transparent);
   margin: 4rem 0;
 }
 
-/* Premium Gradient Backgrounds */
+/* Vibrant Gradient Backgrounds */
 .bg-premium-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
 }
 
 .bg-premium-dark {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
 .bg-premium-light {
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #fef7ff 0%, #fceeff 100%);
 }
 
-/* Premium Shadows */
+/* Vibrant Shadows */
 .shadow-premium {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.3);
 }
 
 .shadow-premium-lg {
-  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 35px 60px -12px rgba(168, 85, 247, 0.4);
 }
 
 /* Loading animation */
@@ -380,8 +380,8 @@ body {
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(168, 85, 247, 0.6); }
 }
 
 @keyframes slideInUp {
@@ -916,26 +916,26 @@ button, a[role="button"] {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
 }
 
-/* Premium Gradient Text */
+/* Vibrant Gradient Text */
 .gradient-text-blue {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-green {
-  background: linear-gradient(135deg, #10b981, #059669, #047857);
+  background: linear-gradient(135deg, #22c55e, #16a34a, #15803d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-purple {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed, #6d28d9);
+  background: linear-gradient(135deg, #a855f7, #ec4899, #f97316);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

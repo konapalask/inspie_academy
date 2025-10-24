@@ -123,7 +123,7 @@ export default function Courses() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-slate-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -157,11 +157,11 @@ export default function Courses() {
               <button
                 key={category.value}
                 onClick={() => setSelectedCategory(category.value)}
-                className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 rounded-lg ${
-                  selectedCategory === category.value
-                    ? 'bg-slate-900 text-white'
-                    : 'bg-white border border-slate-300 text-slate-700 hover:border-slate-900'
-                }`}
+                  className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 rounded-lg ${
+                    selectedCategory === category.value
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      : 'bg-white border border-purple-300 text-purple-700 hover:border-purple-600'
+                  }`}
               >
                 {category.label}
               </button>
@@ -233,7 +233,7 @@ export default function Courses() {
 
                   <Link
                     to="/admissions"
-                    className="inline-flex items-center gap-3 bg-slate-900 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-slate-800 transition-all duration-500 rounded-lg"
+                    className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
                   >
                     Enroll Now
                     <FaArrowRight className="text-xs" />
@@ -274,7 +274,7 @@ export default function Courses() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-slate-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

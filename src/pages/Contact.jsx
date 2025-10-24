@@ -82,7 +82,7 @@ Please respond at the earliest.`
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ Please respond at the earliest.`
                 transition={{ delay: index * 0.1 }}
                 className="group text-center block"
               >
-                <div className="w-16 h-16 bg-black text-white flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-800 transition-colors duration-500">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-500">
                   <info.icon className="text-2xl" />
                 </div>
                 <h3 className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">{info.title}</h3>
@@ -244,7 +244,7 @@ Please respond at the earliest.`
 
                 <button
                   type="submit"
-                  className="w-full bg-black text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500 flex items-center justify-center gap-3"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 flex items-center justify-center gap-3"
                 >
                   Send Message
                   <FaArrowRight className="text-xs" />
@@ -295,7 +295,7 @@ Please respond at the earliest.`
                 href={`https://www.google.com/maps/dir/?api=1&destination=16.50632,80.64574`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-black text-white text-center px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500 mt-6"
+                className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 mt-6"
               >
                 Get Directions
               </a>
@@ -305,7 +305,7 @@ Please respond at the earliest.`
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

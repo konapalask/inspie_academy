@@ -38,7 +38,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-white/95 border-b border-slate-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
+          isScrolled ? 'bg-white/95 border-b border-purple-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
         }`}
       >
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
@@ -79,7 +79,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 to="/admissions"
-                className="bg-slate-900 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:bg-slate-800 transition-all duration-500 rounded-lg"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
               >
                 Enroll Now
               </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
               >
                 <Link
                   to="/admissions"
-                  className="block w-full bg-slate-900 text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium rounded-lg"
+                  className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium rounded-lg"
                 >
                   Enroll Now
                 </Link>
