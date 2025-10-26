@@ -73,33 +73,33 @@ const ScrollingBanner = ({ images, autoPlayInterval = 4000 }) => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Buttons */}
+          {/* Navigation Buttons - Hidden on small mobile, visible from sm up */}
           <button
             onClick={() => paginate(-1)}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
+            className="absolute left-4 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/95 backdrop-blur-sm border-2 border-blue-600 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 z-10 shadow-lg hover:scale-110 active:scale-95"
             aria-label="Previous banner"
           >
-            <FaChevronLeft className="text-sm sm:text-lg" />
+            <FaChevronLeft className="text-base sm:text-lg" />
           </button>
           
           <button
             onClick={() => paginate(1)}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
+            className="absolute right-4 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white/95 backdrop-blur-sm border-2 border-blue-600 rounded-full flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300 z-10 shadow-lg hover:scale-110 active:scale-95"
             aria-label="Next banner"
           >
-            <FaChevronRight className="text-sm sm:text-lg" />
+            <FaChevronRight className="text-base sm:text-lg" />
           </button>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
+          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-10">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? 'w-8 h-1.5 sm:w-10 sm:h-2.5 bg-blue-600 shadow-lg'
-                    : 'w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 bg-white/60 hover:bg-white'
+                    ? 'w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 shadow-lg ring-2 ring-blue-200'
+                    : 'w-2 h-2 sm:w-3 sm:h-3 bg-white/40 hover:bg-white/60'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
