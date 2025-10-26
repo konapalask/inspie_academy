@@ -41,23 +41,23 @@ export default function Navbar() {
           isScrolled ? 'bg-white/95 border-b border-blue-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
         }`}
       >
-        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="flex items-center justify-between h-20">
+        <div className="container mx-auto px-3 sm:px-6 lg:px-16 xl:px-24">
+          <div className="flex items-center justify-between h-16 sm:h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
               <img 
                 src="/images/aia logo.png" 
                 alt="Inspire Academy Logo" 
-                className="h-12 w-auto object-contain"
+                className="h-8 sm:h-12 w-auto object-contain"
               />
-              <div className="hidden sm:block">
-                <div className="text-xl font-semibold tracking-tight text-slate-900">Inspire Academy</div>
-                <div className="text-[10px] tracking-[0.2em] uppercase text-slate-500">Education Excellence</div>
+              <div className="hidden xs:block sm:block">
+                <div className="text-lg sm:text-xl font-semibold tracking-tight text-slate-900">Inspire Academy</div>
+                <div className="text-[8px] sm:text-[10px] tracking-[0.2em] uppercase text-slate-500">Education Excellence</div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-1 overflow-x-auto">
               {navItems.map((item) => (
                 <RouterNavLink
                   key={item.to}
@@ -76,12 +76,12 @@ export default function Navbar() {
             </nav>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-3 lg:gap-4">
               <a
                 href="https://wa.me/919848628863?text=Hi%2C%20I%20want%20to%20enroll%20for%20admission%20at%20Inspire%20Academy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-500 rounded-lg"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 sm:px-8 py-2 sm:py-3 text-xs tracking-[0.15em] uppercase font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-500 rounded-lg whitespace-nowrap"
               >
                 Enroll Now
               </a>

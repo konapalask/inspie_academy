@@ -4,7 +4,7 @@ import { FaArrowRight } from 'react-icons/fa'
 
 // Primary Button - Blue gradient
 export const PrimaryButton = ({ to, href, children, className = '', icon = true, onClick }) => {
-  const buttonClasses = `group inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white px-10 py-5 font-bold text-sm uppercase tracking-wider hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 rounded-xl shadow-xl hover:shadow-2xl transform hover:scale-105 gradient-overlay ${className}`
+  const buttonClasses = `group inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 font-bold text-xs sm:text-sm uppercase tracking-wider hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 rounded-lg sm:rounded-xl shadow-lg sm:shadow-xl hover:shadow-2xl transform hover:scale-105 gradient-overlay ${className}`
   
   const content = (
     <>

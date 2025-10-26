@@ -39,9 +39,9 @@ const ScrollingBanner = ({ images, autoPlayInterval = 4000 }) => {
   }
 
   return (
-    <div className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-4 border-y border-blue-200 overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-        <div className="relative h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden rounded-2xl shadow-2xl bg-white">
+    <div className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-2 sm:py-4 border-y border-blue-200 overflow-hidden">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-16 xl:px-24">
+        <div className="relative h-[200px] sm:h-[300px] lg:h-[500px] xl:h-[600px] overflow-hidden rounded-xl lg:rounded-2xl shadow-2xl bg-white">
           <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentIndex}
@@ -76,30 +76,30 @@ const ScrollingBanner = ({ images, autoPlayInterval = 4000 }) => {
           {/* Navigation Buttons */}
           <button
             onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
             aria-label="Previous banner"
           >
-            <FaChevronLeft className="text-lg" />
+            <FaChevronLeft className="text-sm sm:text-lg" />
           </button>
           
           <button
             onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/90 backdrop-blur-sm border border-blue-200 rounded-full flex items-center justify-center text-blue-600 hover:bg-white transition-all duration-300 z-10 shadow-xl hover:scale-110"
             aria-label="Next banner"
           >
-            <FaChevronRight className="text-lg" />
+            <FaChevronRight className="text-sm sm:text-lg" />
           </button>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          <div className="absolute bottom-2 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? 'w-10 h-2.5 bg-blue-600 shadow-lg'
-                    : 'w-2.5 h-2.5 bg-white/60 hover:bg-white'
+                    ? 'w-8 h-1.5 sm:w-10 sm:h-2.5 bg-blue-600 shadow-lg'
+                    : 'w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 bg-white/60 hover:bg-white'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
