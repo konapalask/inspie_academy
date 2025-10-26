@@ -90,16 +90,16 @@ const ScrollingBanner = ({ images, autoPlayInterval = 4000 }) => {
             <FaChevronRight className="text-base sm:text-lg" />
           </button>
 
-          {/* Pagination Dots */}
-          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-10">
+          {/* Pagination Dots - Simple professional dots */}
+          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
             {images.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? 'w-3 h-3 sm:w-4 sm:h-4 bg-blue-600 shadow-lg ring-2 ring-blue-200'
-                    : 'w-2 h-2 sm:w-3 sm:h-3 bg-white/40 hover:bg-white/60'
+                    ? 'w-2.5 h-2.5 bg-blue-600 border-2 border-white shadow-md'
+                    : 'w-2.5 h-2.5 bg-white/60 hover:bg-white border border-white/40'
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
