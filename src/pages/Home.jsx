@@ -297,7 +297,7 @@ export default function Home() {
                       <p className="text-white/80 text-base mb-6">Medical Entrance Preparation</p>
                       <div className="flex justify-between text-base p-4 bg-white/5 rounded-xl backdrop-blur-sm">
                         <span className="text-white/70 font-medium">Success Rate</span>
-                        <span className="text-cyan-400 font-bold text-xl">92%</span>
+                        <span className="text-cyan-400 font-bold text-xl">85%</span>
                       </div>
                     </div>
                   </div>

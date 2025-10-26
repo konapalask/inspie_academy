@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaMinus, FaArrowRight, FaClock, FaUser } from 'react-icons/fa'
+import { FaMinus, FaArrowRight, FaClock, FaUser, FaBook } from 'react-icons/fa'
 import Card3D from '../components/Card3D'
 import AnimatedSection from '../components/AnimatedSection'
 import { PrimaryButton } from '../components/Button'
