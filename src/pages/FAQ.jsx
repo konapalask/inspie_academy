@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaMinus, FaPlus } from 'react-icons/fa'
+import AnimatedSection from '../components/AnimatedSection'
+import { PrimaryButton } from '../components/Button'
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -84,7 +86,7 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,48 +127,43 @@ export default function FAQ() {
                     const isOpen = openIndex === `${categoryIndex}-${questionIndex}`
                     
                     return (
-                      <motion.div
-                        key={questionIndex}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: questionIndex * 0.1 }}
-                        className="border-b border-gray-200 last:border-0"
-                      >
-                        <button
-                          onClick={() => toggleQuestion(categoryIndex, questionIndex)}
-                          className="w-full py-6 flex items-start justify-between gap-6 text-left group"
-                        >
-                          <h3 className="text-xl font-medium text-black tracking-tight group-hover:text-gray-600 transition-colors">
-                            {faq.question}
-                          </h3>
-                          <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
-                            {isOpen ? (
-                              <FaMinus className="text-xs" />
-                            ) : (
-                              <FaPlus className="text-xs" />
+                      <AnimatedSection key={questionIndex} delay={questionIndex * 0.1}>
+                        <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 border border-slate-200">
+                          <button
+                            onClick={() => toggleQuestion(categoryIndex, questionIndex)}
+                            className="w-full flex items-start justify-between gap-6 text-left group"
+                          >
+                            <h3 className="text-lg font-bold text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+                              {faq.question}
+                            </h3>
+                            <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-600 transition-colors">
+                              {isOpen ? (
+                                <FaMinus className="text-xs text-blue-600 group-hover:text-white" />
+                              ) : (
+                                <FaPlus className="text-xs text-blue-600 group-hover:text-white" />
+                              )}
+                            </div>
+                          </button>
+                          
+                          <AnimatePresence>
+                            {isOpen && (
+                              <motion.div
+                                initial={{ height: 0, opacity: 0 }}
+                                animate={{ height: 'auto', opacity: 1 }}
+                                exit={{ height: 0, opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="pt-4 mt-4 border-t border-blue-200">
+                                  <p className="text-slate-600 leading-relaxed font-medium">
+                                    {faq.answer}
+                                  </p>
+                                </div>
+                              </motion.div>
                             )}
-                          </div>
-                        </button>
-                        
-                        <AnimatePresence>
-                          {isOpen && (
-                            <motion.div
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.3 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="pb-6 pr-12">
-                                <p className="text-gray-600 leading-relaxed font-light">
-                                  {faq.answer}
-                                </p>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </motion.div>
+                          </AnimatePresence>
+                        </div>
+                      </AnimatedSection>
                     )
                   })}
                 </div>
@@ -177,7 +174,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -193,12 +190,9 @@ export default function FAQ() {
               Our team is here to help. Contact us for personalized assistance.
             </p>
             
-            <a
-              href="/contact"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
-            >
+            <PrimaryButton to="/contact">
               Contact Us
-            </a>
+            </PrimaryButton>
           </motion.div>
         </div>
       </section>

@@ -1,6 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaMinus, FaArrowRight, FaClock, FaUser } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { PrimaryButton } from '../components/Button'
 
 export default function Blog() {
   const blogPosts = [
@@ -63,7 +66,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,64 +92,69 @@ export default function Blog() {
       {/* Blog Posts Grid */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 three-d-container">
             {blogPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
-                {/* Image Placeholder */}
-                <div className="bg-gray-200 aspect-[16/10] mb-8 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-gray-500 text-sm transition-transform duration-700 group-hover:scale-105">
-                    Blog {post.id}
-                  </div>
-                </div>
+              <AnimatedSection key={post.id} delay={index * 0.1}>
+                <Card3D className="group card-3d">
+                  <article className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 gradient-overlay">
+                    {/* Image Placeholder */}
+                    <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 aspect-[16/10] overflow-hidden relative">
+                      <div className="w-full h-full flex items-center justify-center transition-transform duration-700 group-hover:scale-110">
+                        <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl layer-3">
+                          <FaBook className="text-4xl text-white" />
+                        </div>
+                      </div>
+                    </div>
 
-                {/* Category */}
-                <div className="inline-flex items-center gap-3 mb-4">
-                  <FaMinus className="text-xs" />
-                  <span className="text-xs tracking-[0.2em] uppercase text-gray-500">{post.category}</span>
-                </div>
+                    <div className="p-8">
+                      {/* Category */}
+                      <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-blue-50 rounded-lg">
+                        <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                        <span className="text-xs tracking-[0.2em] uppercase text-blue-600 font-bold">{post.category}</span>
+                      </div>
 
-                {/* Title */}
-                <h2 className="text-2xl font-medium text-black mb-4 tracking-tight group-hover:text-gray-600 transition-colors">
-                  {post.title}
-                </h2>
+                      {/* Title */}
+                      <h2 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors layer-2">
+                        {post.title}
+                      </h2>
 
-                {/* Excerpt */}
-                <p className="text-gray-600 leading-relaxed font-light mb-6">
-                  {post.excerpt}
-                </p>
+                      {/* Excerpt */}
+                      <p className="text-slate-600 leading-relaxed font-medium mb-6 layer-1">
+                        {post.excerpt}
+                      </p>
 
-                {/* Meta Info */}
-                <div className="flex items-center gap-6 text-xs text-gray-500 mb-6 pt-6 border-t border-gray-200">
-                  <div className="flex items-center gap-2">
-                    <FaClock className="text-xs" />
-                    <span>{post.readTime}</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <FaUser className="text-xs" />
-                    <span>{post.author}</span>
-                  </div>
-                </div>
+                      {/* Meta Info */}
+                      <div className="flex items-center gap-6 text-xs text-slate-500 mb-6 pt-6 border-t border-blue-200">
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <FaClock className="text-blue-600 text-xs" />
+                          </div>
+                          <span className="font-medium">{post.readTime}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className="w-6 h-6 bg-indigo-100 rounded-lg flex items-center justify-center">
+                            <FaUser className="text-indigo-600 text-xs" />
+                          </div>
+                          <span className="font-medium">{post.author}</span>
+                        </div>
+                      </div>
 
-                {/* Read More Link */}
-                <button className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-medium text-black hover:gap-4 transition-all duration-300">
-                  Read Article
-                  <FaArrowRight className="text-xs" />
-                </button>
-              </motion.article>
+                      {/* Read More Link */}
+                      <button className="inline-flex items-center gap-2 text-xs tracking-[0.15em] uppercase font-bold text-blue-600 hover:gap-4 transition-all duration-300">
+                        Read Article
+                        <FaArrowRight className="text-xs" />
+                      </button>
+                    </div>
+                  </article>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -166,11 +174,11 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-4 bg-transparent border border-white/30 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors font-light"
+                className="flex-1 px-6 py-5 bg-transparent border-2 border-white/40 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors font-medium rounded-xl"
               />
-              <button className="bg-white text-black px-10 py-4 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-100 transition-all duration-500 whitespace-nowrap">
+              <PrimaryButton onClick={() => {}} icon={false} className="whitespace-nowrap">
                 Subscribe
-              </button>
+              </PrimaryButton>
             </div>
           </motion.div>
         </div>

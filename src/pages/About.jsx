@@ -10,6 +10,9 @@ import {
   FaMinus,
   FaCheckCircle
 } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { PrimaryButton } from '../components/Button'
 
 export default function About() {
   const values = [
@@ -50,7 +53,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -138,7 +141,7 @@ export default function About() {
       <div className="luxury-divider"></div>
 
       {/* Core Values */}
-      <section className="py-32 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-32 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="text-center mb-20">
             <div className="inline-flex items-center gap-3 mb-8">
@@ -152,24 +155,24 @@ export default function About() {
             </h2>
                 </div>
               
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 three-d-container">
             {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="text-center"
-              >
-                <h3 className="text-2xl font-medium text-slate-900 mb-4 tracking-tight uppercase">
-                  {value.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed font-light">
-                  {value.description}
-                </p>
-                <div className="w-12 h-px bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mt-6"></div>
-              </motion.div>
+              <AnimatedSection key={index} delay={index * 0.15}>
+                <Card3D className="text-center card-3d h-full">
+                  <div className="relative p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 gradient-overlay h-full flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl layer-3 flex-shrink-0">
+                      <span className="text-3xl font-bold text-white">{value.title.charAt(0)}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight uppercase layer-2">
+                      {value.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed font-light layer-1 mb-auto">
+                      {value.description}
+                    </p>
+                    <div className="w-16 h-1.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mx-auto mt-6 shadow-md"></div>
+                  </div>
+                </Card3D>
+              </AnimatedSection>
             ))}
             </div>
         </div>
@@ -218,7 +221,7 @@ export default function About() {
       <div className="luxury-divider"></div>
 
       {/* Why Choose Us */}
-      <section className="py-32 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section className="py-32 bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div 
@@ -257,34 +260,30 @@ export default function About() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-purple-900 to-pink-900 text-white p-16 rounded-xl"
-            >
-              <div className="space-y-12">
-                <div>
-                  <div className="text-6xl font-light mb-4">10,000+</div>
-                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Students Trained</div>
+            <AnimatedSection delay={0.2}>
+              <Card3D className="bg-gradient-to-br from-blue-900 via-indigo-900 to-blue-950 text-white p-16 rounded-2xl shadow-2xl card-3d gradient-overlay">
+                <div className="space-y-12">
+                  <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
+                    <div className="text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent layer-3">10,000+</div>
+                    <div className="text-sm tracking-[0.2em] uppercase text-white/70 font-semibold layer-2">Students Trained</div>
+                  </div>
+                  <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
+                    <div className="text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent layer-3">85%</div>
+                    <div className="text-sm tracking-[0.2em] uppercase text-white/70 font-semibold layer-2">Success Rate</div>
+                  </div>
+                  <div className="p-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
+                    <div className="text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent layer-3">13+</div>
+                    <div className="text-sm tracking-[0.2em] uppercase text-white/70 font-semibold layer-2">Years Experience</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-6xl font-light mb-4">85%</div>
-                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Success Rate</div>
-                </div>
-                <div>
-                  <div className="text-6xl font-light mb-4">13+</div>
-                  <div className="text-sm tracking-[0.15em] uppercase text-white/50">Years Experience</div>
-                </div>
-              </div>
-              </motion.div>
+              </Card3D>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -300,13 +299,9 @@ export default function About() {
               Join thousands of successful students who chose Inspire Academy for their academic journey
             </p>
             
-            <Link 
-              to="/admissions"
-              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
-            >
-                Enroll Now
-              <FaArrowRight className="text-xs" />
-            </Link>
+            <PrimaryButton to="/admissions">
+              Enroll Now
+            </PrimaryButton>
           </motion.div>
         </div>
       </section>

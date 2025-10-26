@@ -223,12 +223,12 @@ Thank you!`;
         initial={{ opacity: 0, scale: 0.8, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.8, y: 20 }}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[95vw] max-w-sm sm:w-96 md:w-[420px] h-[85vh] sm:h-[80vh] bg-white rounded-3xl shadow-2xl flex flex-col border-2 border-primary-200"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[95vw] max-w-sm sm:w-96 md:w-[420px] h-[85vh] sm:h-[80vh] bg-white rounded-3xl shadow-2xl flex flex-col border-2 border-blue-200"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-primary-100 bg-gradient-to-r from-primary-50 to-blue-50">
+        <div className="flex items-center justify-between p-4 sm:p-6 border-b border-blue-100 bg-gradient-to-r from-blue-50 to-indigo-50">
           <div className="flex items-center gap-3 sm:gap-4">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
               <FaRobot className="text-white text-lg sm:text-xl" />
             </div>
             <div>
@@ -245,9 +245,9 @@ Thank you!`;
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 sm:space-y-6 bg-gray-50">
           {messages.map((msg, index) => (
             <div key={msg.id} className={`flex ${msg.type === 'user' ? 'justify-end' : 'justify-start'}`}>
-              <div className={`max-w-[85%] p-3 sm:p-4 rounded-2xl shadow-sm ${msg.type === 'user' ? 'bg-gradient-to-r from-primary-500 to-primary-600 text-white' : 'bg-white text-gray-900 border border-gray-200'}`}>
+              <div className={`max-w-[85%] p-3 sm:p-4 rounded-2xl shadow-sm ${msg.type === 'user' ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white' : 'bg-white text-gray-900 border border-gray-200'}`}>
                 <div className="flex items-start gap-2">
-                  {msg.type === 'bot' && <FaRobot className="text-primary-600 mt-1 flex-shrink-0 text-sm sm:text-base" />}
+                  {msg.type === 'bot' && <FaRobot className="text-blue-600 mt-1 flex-shrink-0 text-sm sm:text-base" />}
                   {msg.type === 'user' && <FaUser className="text-white mt-1 flex-shrink-0 text-sm sm:text-base" />}
                   <div className="flex-1">
                     <p className="text-sm sm:text-base leading-relaxed whitespace-pre-line">{msg.text}</p>
@@ -290,7 +290,7 @@ Thank you!`;
           {isTyping && (
             <div className="flex justify-start">
               <div className="bg-white border border-gray-200 p-3 sm:p-4 rounded-2xl flex items-center gap-2">
-                <FaRobot className="text-primary-600 text-sm sm:text-base" />
+                <FaRobot className="text-blue-600 text-sm sm:text-base" />
                 <div className="flex space-x-1">
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                   <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
@@ -311,13 +311,13 @@ Thank you!`;
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
               placeholder="Type your message..."
-              className="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm sm:text-base"
+              className="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
               disabled={currentStep === -1}
             />
             <button 
               onClick={handleSend}
               disabled={currentStep === -1}
-              className="px-3 sm:px-4 py-2 sm:py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base font-medium"
+              className="px-3 sm:px-4 py-2 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base font-medium"
             >
               Send
             </button>

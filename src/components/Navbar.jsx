@@ -38,7 +38,7 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-white/95 border-b border-purple-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
+          isScrolled ? 'bg-white/95 border-b border-blue-200 shadow-sm' : 'bg-white/90 backdrop-blur-md'
         }`}
       >
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
@@ -77,12 +77,14 @@ export default function Navbar() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-4">
-              <Link
-                to="/admissions"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
+              <a
+                href="https://wa.me/919848628863?text=Hi%2C%20I%20want%20to%20enroll%20for%20admission%20at%20Inspire%20Academy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-500 rounded-lg"
               >
                 Enroll Now
-              </Link>
+              </a>
             </div>
 
             {/* Mobile Menu Toggle */}
@@ -136,12 +138,14 @@ export default function Navbar() {
                 transition={{ delay: 0.6 }}
                 className="mt-12"
               >
-                <Link
-                  to="/admissions"
-                  className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium rounded-lg"
+                <a
+                  href="https://wa.me/919848628863?text=Hi%2C%20I%20want%20to%20enroll%20for%20admission%20at%20Inspire%20Academy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-center px-8 py-6 text-sm tracking-[0.15em] uppercase font-medium rounded-lg"
                 >
                   Enroll Now
-                </Link>
+                </a>
               </motion.div>
             </div>
           </motion.div>

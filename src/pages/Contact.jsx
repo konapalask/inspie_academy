@@ -9,6 +9,9 @@ import {
   FaArrowRight,
   FaWhatsapp
 } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { SubmitButton, PrimaryButton } from '../components/Button'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -82,7 +85,7 @@ Please respond at the earliest.`
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -108,29 +111,28 @@ Please respond at the earliest.`
       {/* Contact Information */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 three-d-container">
             {contactInfo.map((info, index) => (
-              <motion.a
-                key={index}
-                href={info.action}
-                target={info.title === 'WhatsApp' || info.title === 'Location' ? '_blank' : undefined}
-                rel={info.title === 'WhatsApp' || info.title === 'Location' ? 'noopener noreferrer' : undefined}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group text-center block"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white flex items-center justify-center mx-auto mb-6 group-hover:from-purple-700 group-hover:to-pink-700 transition-all duration-500">
-                  <info.icon className="text-2xl" />
-                </div>
-                <h3 className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-4">{info.title}</h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, idx) => (
-                    <div key={idx} className="text-gray-900 font-light">{detail}</div>
-                  ))}
-                </div>
-              </motion.a>
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <Card3D>
+                  <a
+                    href={info.action}
+                    target={info.title === 'WhatsApp' || info.title === 'Location' ? '_blank' : undefined}
+                    rel={info.title === 'WhatsApp' || info.title === 'Location' ? 'noopener noreferrer' : undefined}
+                    className="group text-center block p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 card-3d gradient-overlay"
+                  >
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 text-white flex items-center justify-center mx-auto mb-6 rounded-2xl shadow-xl transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 layer-3">
+                      <info.icon className="text-3xl" />
+                    </div>
+                    <h3 className="text-xs tracking-[0.2em] uppercase text-blue-600 mb-4 font-bold layer-2">{info.title}</h3>
+                    <div className="space-y-1 layer-1">
+                      {info.details.map((detail, idx) => (
+                        <div key={idx} className="text-gray-900 font-semibold">{detail}</div>
+                      ))}
+                    </div>
+                  </a>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -242,13 +244,9 @@ Please respond at the earliest.`
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 flex items-center justify-center gap-3"
-                >
+                <SubmitButton>
                   Send Message
-                  <FaArrowRight className="text-xs" />
-                </button>
+                </SubmitButton>
               </form>
             </motion.div>
 
@@ -291,21 +289,18 @@ Please respond at the earliest.`
               </div>
 
               {/* Direction Button */}
-              <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=16.50632,80.64574`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-center px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 mt-6"
-              >
-                Get Directions
-              </a>
+              <div className="mt-6">
+                <PrimaryButton href="https://www.google.com/maps/dir/?api=1&destination=16.50632,80.64574" className="w-full justify-center">
+                  Get Directions
+                </PrimaryButton>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -321,15 +316,9 @@ Please respond at the earliest.`
               Schedule a campus tour to experience our facilities and meet our faculty
             </p>
             
-            <a
-              href="https://api.whatsapp.com/send?phone=919848628863&text=I%20would%20like%20to%20schedule%20a%20campus%20visit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
-            >
+            <PrimaryButton href="https://api.whatsapp.com/send?phone=919848628863&text=I%20would%20like%20to%20schedule%20a%20campus%20visit">
               Schedule Visit
-              <FaArrowRight className="text-xs" />
-            </a>
+            </PrimaryButton>
           </motion.div>
         </div>
       </section>

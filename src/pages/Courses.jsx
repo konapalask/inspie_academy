@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaMinus, FaCheckCircle, FaArrowRight, FaClock, FaUsers, FaBook } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { PrimaryButton, OutlineButton } from '../components/Button'
 
 export default function Courses() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -15,8 +18,6 @@ export default function Courses() {
       duration: '24 Months',
       batchSize: '25 Students',
       sessions: '6 Days/Week',
-      price: '₹75,000',
-      period: 'per year',
       description: 'Comprehensive program designed for students aspiring to pursue medical education through rigorous preparation and expert guidance.',
       features: [
         'Complete syllabus coverage for Physics, Chemistry, and Biology',
@@ -40,8 +41,6 @@ export default function Courses() {
       duration: '24 Months',
       batchSize: '25 Students',
       sessions: '6 Days/Week',
-      price: '₹80,000',
-      period: 'per year',
       description: 'Intensive coaching program for IIT-JEE aspirants focusing on conceptual clarity and advanced problem-solving techniques.',
       features: [
         'In-depth coverage of Mathematics, Physics, and Chemistry',
@@ -65,8 +64,6 @@ export default function Courses() {
       duration: '12 Months',
       batchSize: '25 Students',
       sessions: '6 Days/Week',
-      price: '₹60,000',
-      period: 'per year',
       description: 'Specialized program for EAMCET preparation aligned with state board curriculum and examination requirements.',
       features: [
         'State board curriculum integrated preparation',
@@ -90,8 +87,6 @@ export default function Courses() {
       duration: '12 Months',
       batchSize: '20 Students',
       sessions: '5 Days/Week',
-      price: '₹50,000',
-      period: 'per year',
       description: 'Building strong conceptual foundation for students in classes 9 and 10 to excel in board examinations and competitive preparation.',
       features: [
         'Conceptual clarity in core subjects',
@@ -123,7 +118,7 @@ export default function Courses() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -159,8 +154,8 @@ export default function Courses() {
                 onClick={() => setSelectedCategory(category.value)}
                   className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 rounded-lg ${
                     selectedCategory === category.value
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                      : 'bg-white border border-purple-300 text-purple-700 hover:border-purple-600'
+                      ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                      : 'bg-white border border-blue-300 text-blue-700 hover:border-blue-600'
                   }`}
               >
                 {category.label}
@@ -173,18 +168,12 @@ export default function Courses() {
       {/* Courses List */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="space-y-20">
+          <div className="space-y-20 three-d-container">
             {filteredCourses.map((course, index) => (
-              <motion.div
-                key={course.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.8 }}
-                className="grid lg:grid-cols-2 gap-16 border-b border-slate-200 pb-20 last:border-0"
-              >
-                {/* Left Column - Info */}
-                <div>
+              <AnimatedSection key={course.id} delay={index * 0.1}>
+                <Card3D className="grid lg:grid-cols-2 gap-16 p-12 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-200 card-3d gradient-overlay min-h-[600px]">
+                  {/* Left Column - Info */}
+                  <div>
                   <div className="inline-flex items-center gap-3 mb-6">
                     <FaMinus className="text-xs" />
                     <span className="text-xs tracking-[0.2em] uppercase text-slate-500">{course.subtitle}</span>
@@ -223,58 +212,49 @@ export default function Courses() {
                     </div>
                   </div>
 
-                  {/* Price */}
-                  <div className="mb-8">
-                    <div className="flex items-baseline gap-2 mb-2">
-                      <span className="text-5xl font-light">{course.price}</span>
-                      <span className="text-sm text-slate-500 tracking-wider">{course.period}</span>
-                    </div>
-                  </div>
-
-                  <Link
-                    to="/admissions"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:from-purple-700 hover:to-pink-700 transition-all duration-500 rounded-lg"
-                  >
+                  <PrimaryButton to="/admissions">
                     Enroll Now
-                    <FaArrowRight className="text-xs" />
-                  </Link>
+                  </PrimaryButton>
                 </div>
 
                 {/* Right Column - Features */}
                 <div>
-                  <div className="bg-slate-50 p-10 h-full rounded-xl">
+                  <div className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 p-10 h-full rounded-xl border border-blue-100 shadow-inner">
                     <h3 className="text-xs tracking-[0.2em] uppercase text-slate-500 mb-8">Program Features</h3>
                     
                     <div className="space-y-4 mb-12">
                       {course.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <FaMinus className="text-xs mt-2 flex-shrink-0" />
-                          <span className="text-sm text-slate-700 font-light leading-relaxed">{feature}</span>
+                        <div key={idx} className="flex items-start gap-3 p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors duration-300">
+                          <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-md flex items-center justify-center flex-shrink-0">
+                            <FaCheckCircle className="text-white text-xs" />
+                          </div>
+                          <span className="text-sm text-slate-700 font-medium leading-relaxed">{feature}</span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="pt-8 border-t border-slate-200">
-                      <h3 className="text-xs tracking-[0.2em] uppercase text-slate-500 mb-6">Key Highlights</h3>
+                    <div className="pt-8 border-t border-blue-200">
+                      <h3 className="text-xs tracking-[0.2em] uppercase text-blue-600 mb-6 font-bold">Key Highlights</h3>
                       <div className="space-y-3">
                         {course.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <FaCheckCircle className="text-slate-900 mt-1 flex-shrink-0" />
-                            <span className="text-sm text-slate-700 font-light">{highlight}</span>
+                          <div key={idx} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+                            <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-slate-700 font-medium">{highlight}</span>
                           </div>
                         ))}
                       </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </Card3D>
+            </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900 text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -291,19 +271,12 @@ export default function Courses() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Link 
-                to="/admissions"
-                className="inline-flex items-center justify-center gap-3 bg-white text-slate-900 px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-slate-100 transition-all duration-500 rounded-lg"
-              >
+              <PrimaryButton to="/admissions">
                 Enroll Now
-                <FaArrowRight className="text-xs" />
-              </Link>
-              <Link 
-                to="/contact"
-                className="inline-flex items-center justify-center border border-white/30 text-white px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-white hover:text-slate-900 transition-all duration-500 rounded-lg"
-              >
+              </PrimaryButton>
+              <OutlineButton to="/contact">
                 Contact Us
-              </Link>
+              </OutlineButton>
             </div>
           </motion.div>
         </div>

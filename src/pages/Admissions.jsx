@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaMinus, FaCheckCircle, FaArrowRight, FaCalendar, FaFileAlt, FaCreditCard } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { SubmitButton, PrimaryButton } from '../components/Button'
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -111,7 +114,7 @@ Please provide admission details and guidance.`
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -307,66 +310,11 @@ Please provide admission details and guidance.`
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full bg-black text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500 flex items-center justify-center gap-3"
-                >
+                <SubmitButton>
                   Submit Application
-                  <FaArrowRight className="text-xs" />
-                </button>
+                </SubmitButton>
               </div>
             </motion.form>
-          </div>
-        </div>
-      </section>
-
-      {/* Luxury Divider */}
-      <div className="luxury-divider"></div>
-
-      {/* Fee Structure */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 mb-8">
-              <FaMinus className="text-xs" />
-              <span className="text-xs tracking-[0.2em] uppercase text-gray-500">Investment</span>
-              <FaMinus className="text-xs" />
-            </div>
-            
-            <h2 className="text-5xl font-light text-black tracking-tight mb-6">
-              Fee <span className="font-semibold">Structure</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {fees.map((fee, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white border border-gray-200 p-10 hover:border-black transition-all duration-700"
-              >
-                <h3 className="text-2xl font-medium text-black mb-2 tracking-tight">{fee.course}</h3>
-                <div className="text-sm text-gray-500 mb-8">{fee.duration}</div>
-
-                <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-5xl font-light">{fee.annualFee}</span>
-                  <span className="text-sm text-gray-500 tracking-wider">per year</span>
-                </div>
-
-                <div className="space-y-3 mb-8 pb-8 border-b border-gray-200">
-                  <div className="flex items-center gap-2 text-sm">
-                    <FaCreditCard className="text-xs" />
-                    <span className="text-gray-600 font-light">Installments {fee.installments}</span>
-                  </div>
-                </div>
-
-                <div className="text-xs tracking-wider uppercase text-gray-500 mb-4">Includes</div>
-                <p className="text-sm text-gray-600 font-light">{fee.includes}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -412,7 +360,7 @@ Please provide admission details and guidance.`
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -428,15 +376,9 @@ Please provide admission details and guidance.`
               Contact our admissions team for personalized guidance and support
             </p>
             
-            <a
-              href="https://api.whatsapp.com/send?phone=919848628863"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
-            >
+            <PrimaryButton href="https://api.whatsapp.com/send?phone=919848628863">
               Contact Admissions
-              <FaArrowRight className="text-xs" />
-            </a>
+            </PrimaryButton>
           </motion.div>
         </div>
       </section>

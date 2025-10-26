@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaMinus } from 'react-icons/fa'
+import { FaMinus, FaCamera } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all')
@@ -28,7 +30,7 @@ export default function Gallery() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -63,8 +65,8 @@ export default function Gallery() {
                 onClick={() => setSelectedCategory(category.value)}
                 className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 ${
                   selectedCategory === category.value
-                    ? 'bg-black text-white'
-                    : 'bg-white border border-gray-300 text-gray-700 hover:border-black'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                    : 'bg-white border border-blue-300 text-blue-700 hover:border-blue-600'
                 }`}
               >
                 {category.label}
@@ -77,24 +79,25 @@ export default function Gallery() {
       {/* Gallery Grid */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 three-d-container">
             {filteredImages.map((image, index) => (
-              <motion.div
-                key={image.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group"
-              >
-                <div className="bg-gray-200 aspect-[4/3] mb-6 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-gray-500 text-sm">
-                    Image {image.id}
+              <AnimatedSection key={image.id} delay={index * 0.1}>
+                <Card3D className="group card-3d">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 gradient-overlay">
+                    <div className="bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 aspect-[4/3] mb-6 overflow-hidden relative">
+                      <div className="w-full h-full flex items-center justify-center text-blue-600 text-lg font-bold">
+                        <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl layer-3">
+                          <FaCamera className="text-3xl text-white" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 tracking-tight layer-2">{image.title}</h3>
+                      <p className="text-slate-600 font-medium layer-1">{image.description}</p>
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-medium text-black mb-2 tracking-tight">{image.title}</h3>
-                <p className="text-gray-600 font-light">{image.description}</p>
-              </motion.div>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>

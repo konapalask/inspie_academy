@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaMinus, FaTrophy, FaMedal } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { PrimaryButton } from '../components/Button'
 
 export default function Results() {
   const [selectedYear, setSelectedYear] = useState('2024')
@@ -61,7 +64,7 @@ export default function Results() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,8 +121,8 @@ export default function Results() {
                 onClick={() => setSelectedYear(yearData.year)}
                 className={`px-8 py-3 text-xs tracking-[0.15em] uppercase font-medium transition-all duration-500 ${
                   selectedYear === yearData.year
-                    ? 'bg-black text-white'
-                    : 'bg-white border border-gray-300 text-gray-700 hover:border-black'
+                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white'
+                    : 'bg-white border border-blue-300 text-blue-700 hover:border-blue-600'
                 }`}
               >
                 {yearData.year}
@@ -144,29 +147,28 @@ export default function Results() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto three-d-container">
             {currentYearData?.students.map((student, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white border border-gray-200 p-10 hover:border-black transition-all duration-700"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <FaTrophy className="text-2xl text-black" />
-                  <span className="text-xs tracking-[0.15em] uppercase text-gray-500">{student.exam}</span>
-                </div>
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <Card3D className="bg-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all duration-700 border border-slate-200 card-3d gradient-overlay">
+                  <div className="relative">
+                    <div className="flex items-center gap-3 mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl layer-2">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                        <FaTrophy className="text-2xl text-white" />
+                      </div>
+                      <span className="text-xs tracking-[0.15em] uppercase text-blue-600 font-bold">{student.exam}</span>
+                    </div>
 
-                <h3 className="text-2xl font-medium text-black mb-2 tracking-tight">{student.name}</h3>
-                <div className="text-3xl font-light text-black mb-6">{student.rank}</div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight layer-2">{student.name}</h3>
+                    <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-6 layer-3">{student.rank}</div>
 
-                <div className="pt-6 border-t border-gray-200 space-y-2">
-                  <div className="text-sm text-gray-700 font-light">{student.college}</div>
-                  <div className="text-xs tracking-wider uppercase text-gray-500">{student.stream}</div>
-                </div>
-              </motion.div>
+                    <div className="pt-6 border-t border-blue-200 space-y-2">
+                      <div className="text-sm text-slate-800 font-semibold layer-1">{student.college}</div>
+                      <div className="text-xs tracking-wider uppercase text-blue-600 font-bold">{student.stream}</div>
+                    </div>
+                  </div>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -190,31 +192,30 @@ export default function Results() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 three-d-container">
             {achievements.map((achievement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                className="text-center"
-              >
-                <FaMedal className="text-4xl text-black mx-auto mb-6" />
-                <h3 className="text-xl font-medium text-black mb-4 tracking-tight uppercase">
-                  {achievement.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  {achievement.description}
-                </p>
-              </motion.div>
+              <AnimatedSection key={index} delay={index * 0.15}>
+                <Card3D className="text-center card-3d h-full">
+                  <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 gradient-overlay h-full flex flex-col">
+                    <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl layer-3 flex-shrink-0">
+                      <FaMedal className="text-4xl text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight uppercase layer-2">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed font-medium layer-1 mb-auto">
+                      {achievement.description}
+                    </p>
+                  </div>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -230,12 +231,9 @@ export default function Results() {
               Join the legacy of achievers and begin your journey towards excellence
             </p>
             
-            <a
-              href="/admissions"
-              className="inline-flex items-center justify-center gap-3 bg-white text-black px-12 py-6 font-medium text-xs tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-500"
-            >
+            <PrimaryButton to="/admissions">
               Enroll Now
-            </a>
+            </PrimaryButton>
           </motion.div>
         </div>
       </section>

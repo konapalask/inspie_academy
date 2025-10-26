@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaMinus, FaArrowRight, FaUser, FaLock } from 'react-icons/fa'
+import Card3D from '../components/Card3D'
+import AnimatedSection from '../components/AnimatedSection'
+import { SubmitButton } from '../components/Button'
 
 export default function StudentLogin() {
   const [formData, setFormData] = useState({
@@ -24,7 +27,7 @@ export default function StudentLogin() {
   return (
     <div className="min-h-screen bg-white pt-20">
       {/* Hero Section */}
-      <section className="py-32 bg-black text-white">
+      <section className="py-32 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -51,12 +54,9 @@ export default function StudentLogin() {
       <section className="py-32 bg-white">
         <div className="container mx-auto px-6 lg:px-16 xl:px-24">
           <div className="max-w-xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-white border border-gray-200 p-12"
-            >
+            <AnimatedSection>
+              <Card3D className="bg-white rounded-2xl border border-slate-200 p-12 shadow-xl hover:shadow-2xl transition-all duration-500 card-3d gradient-overlay">
+                <div className="relative">
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-3 mb-6">
                   <FaMinus className="text-xs" />
@@ -116,32 +116,30 @@ export default function StudentLogin() {
                 </div>
 
                 {/* Submit Button */}
-                <button
-                  type="submit"
-                  className="w-full bg-black text-white px-10 py-5 text-xs tracking-[0.15em] uppercase font-medium hover:bg-gray-900 transition-all duration-500 flex items-center justify-center gap-3"
-                >
+                <SubmitButton>
                   Login to Portal
-                  <FaArrowRight className="text-xs" />
-                </button>
+                </SubmitButton>
               </form>
 
               {/* Demo Credentials */}
-              <div className="mt-12 pt-8 border-t border-gray-200">
-                <p className="text-xs tracking-[0.15em] uppercase text-gray-500 mb-4 text-center">
+              <div className="mt-12 pt-8 border-t border-blue-200">
+                <p className="text-xs tracking-[0.15em] uppercase text-blue-600 mb-4 text-center font-bold">
                   Demo Credentials
                 </p>
-                <div className="bg-gray-50 p-6 space-y-2 text-sm">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl space-y-2 text-sm border border-blue-200">
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-light">Username:</span>
-                    <span className="text-gray-900 font-medium">demo_student</span>
+                    <span className="text-slate-600 font-medium">Username:</span>
+                    <span className="text-slate-900 font-bold">demo_student</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-500 font-light">Password:</span>
-                    <span className="text-gray-900 font-medium">demo123</span>
+                    <span className="text-slate-600 font-medium">Password:</span>
+                    <span className="text-slate-900 font-bold">demo123</span>
                   </div>
                 </div>
               </div>
-            </motion.div>
+                </div>
+              </Card3D>
+            </AnimatedSection>
 
             {/* Help Text */}
             <motion.div
@@ -181,7 +179,7 @@ export default function StudentLogin() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto three-d-container">
             {[
               {
                 title: 'Study Materials',
@@ -196,21 +194,21 @@ export default function StudentLogin() {
                 description: 'Join live interactive sessions and recorded lecture library'
               }
             ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <h3 className="text-xl font-medium text-black mb-4 tracking-tight uppercase">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed font-light">
-                  {feature.description}
-                </p>
-              </motion.div>
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <Card3D className="text-center card-3d h-full">
+                  <div className="p-8 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 border border-slate-200 gradient-overlay h-full flex flex-col">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-xl layer-3 flex-shrink-0">
+                      <span className="text-white text-2xl font-bold">{feature.title.charAt(0)}</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4 tracking-tight uppercase layer-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed font-medium layer-1 mb-auto">
+                      {feature.description}
+                    </p>
+                  </div>
+                </Card3D>
+              </AnimatedSection>
             ))}
           </div>
         </div>
