@@ -79,7 +79,7 @@ export default function Home() {
       id: 4,
       title: 'Foundation',
       category: 'foundation',
-      subtitle: 'Class 9-10',
+      subtitle: 'We Teach Intermediate Tuitions',
       duration: '12 Months',
       students: '2,100+ Enrolled',
       features: ['Conceptual Learning', 'Olympiad Prep', 'Testing', 'Tracking'],
@@ -237,12 +237,12 @@ export default function Home() {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.02, y: -4 }}
                       whileTap={{ scale: 0.98 }}
-                      className="group relative overflow-hidden bg-gradient-to-br from-green-500 via-emerald-600 to-green-600 text-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-green-400/30"
+                      className="group relative overflow-hidden bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-600/50"
                     >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                       <div className="flex items-center gap-2 sm:gap-3 relative z-10">
-                        <div className="w-10 h-10 sm:w-12 sm:h-14 bg-white/20 backdrop-blur-sm rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                          <FaUsers className="text-lg sm:text-2xl text-white" />
+                        <div className="w-10 h-10 sm:w-12 sm:h-14 bg-emerald-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border border-emerald-400/30">
+                          <FaUsers className="text-lg sm:text-2xl text-emerald-400" />
                         </div>
                         <div className="flex-1">
                           <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide mb-0.5 sm:mb-1">Want to Join?</h3>
@@ -259,12 +259,12 @@ export default function Home() {
                     >
                       <Link 
                         to="/blog"
-                        className="group relative overflow-hidden bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-700 text-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-blue-400/30 block"
+                        className="group relative overflow-hidden bg-gradient-to-br from-slate-700 via-slate-800 to-slate-900 text-white p-4 sm:p-6 rounded-lg sm:rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-600/50 block"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                         <div className="flex items-center gap-2 sm:gap-3 relative z-10">
-                          <div className="w-10 h-10 sm:w-12 sm:h-14 bg-white/20 backdrop-blur-sm rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
-                            <FaBook className="text-lg sm:text-2xl text-white" />
+                          <div className="w-10 h-10 sm:w-12 sm:h-14 bg-blue-500/20 backdrop-blur-sm rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 border border-blue-400/30">
+                            <FaBook className="text-lg sm:text-2xl text-blue-400" />
                           </div>
                           <div className="flex-1">
                             <h3 className="font-bold text-sm sm:text-base uppercase tracking-wide mb-0.5 sm:mb-1">Latest Information</h3>

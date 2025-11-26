@@ -83,7 +83,7 @@ export default function Courses() {
       id: 4,
       title: 'Foundation Program',
       category: 'foundation',
-      subtitle: 'Class 9-10 Excellence',
+      subtitle: 'We Teach Intermediate Tuitions',
       duration: '12 Months',
       batchSize: '20 Students',
       sessions: '5 Days/Week',
