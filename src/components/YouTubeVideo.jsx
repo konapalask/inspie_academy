@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute, FaExpand, FaTimes } from 'react-icons/fa'

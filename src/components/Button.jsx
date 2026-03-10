@@ -1,5 +1,6 @@
+"use client";
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { FaArrowRight } from 'react-icons/fa'
 
 // Primary Button - Blue gradient
@@ -30,7 +31,7 @@ export const PrimaryButton = ({ to, href, children, className = '', icon = true,
   }
 
   return (
-    <Link to={to} className={buttonClasses}>
+    <Link href={to} className={buttonClasses}>
       {content}
     </Link>
   )
@@ -59,7 +60,7 @@ export const SecondaryButton = ({ to, href, children, className = '', onClick })
   }
 
   return (
-    <Link to={to} className={buttonClasses}>
+    <Link href={to} className={buttonClasses}>
       {content}
     </Link>
   )
@@ -88,7 +89,7 @@ export const OutlineButton = ({ to, href, children, className = '', onClick }) =
   }
 
   return (
-    <Link to={to} className={buttonClasses}>
+    <Link href={to} className={buttonClasses}>
       {content}
     </Link>
   )

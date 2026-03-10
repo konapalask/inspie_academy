@@ -19,8 +19,8 @@ html {
 }
 
 body {
-  @apply bg-gradient-to-br from-blue-50 via-sky-50 to-indigo-50 text-gray-800 antialiased font-sans;
-  line-height: 1.7;
+  @apply bg-slate-50 text-slate-800 antialiased font-sans;
+  line-height: 1.6;
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,115 +32,57 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-slate-100;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full;
+  @apply bg-slate-300 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-gradient-to-b from-blue-600 to-indigo-600;
+  @apply bg-slate-400;
 }
 
-/* Header background - Professional Blue Theme */
+/* Header background - Clean Professional Theme */
 .header-bg {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 4px solid #395a8b;
+  /* Deep blue bottom border from image */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  z-index: 50;
 }
 
 /* Timer Flash Animation */
 @keyframes flash {
-  0% { background: linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8); }
-  50% { background: linear-gradient(to right, #ffffff, #ffffff, #ffffff); }
-  100% { background: linear-gradient(to right, #3b82f6, #2563eb, #1d4ed8); }
+  0% {
+    background: #fc7923;
+  }
+
+  50% {
+    background: #ff9a54;
+  }
+
+  100% {
+    background: #fc7923;
+  }
 }
 
-/* Enhanced Logo Styling - Professional Blue Theme */
+/* Enhanced Logo Styling */
 .logo-container {
-  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.15);
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: relative;
 }
 
-.logo-container::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
-  border-radius: inherit;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.logo-container:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow: 0 3px 15px rgba(59, 130, 246, 0.25);
-  transform: translateY(-1px);
-}
-
-.logo-container:hover::before {
-  opacity: 0.1;
-}
-
-/* Academy Name Styling - Professional theme */
-.academy-name {
-  background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
-}
-
-/* Hero section background - Professional Blue theme */
+/* Hero section background - Clean Blue theme */
 .hero-bg {
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
+  background: linear-gradient(135deg, #2d4161 0%, #395a8b 100%);
   position: relative;
   overflow: hidden;
 }
 
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-  animation: float 20s linear infinite;
-}
-
-/* Floating elements */
-.floating-element {
-  animation: float 6s ease-in-out infinite;
-}
-
-.floating-element:nth-child(2) {
-  animation-delay: -2s;
-}
-
-.floating-element:nth-child(3) {
-  animation-delay: -4s;
-}
-
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Gradient text */
+/* Clean Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #395a8b, #466fa8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -148,26 +90,26 @@ body {
 
 /* Professional Button Styles */
 .btn-primary {
+  @apply bg-accent-500 text-white px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-accent-600 hover:shadow-lg transform hover:-translate-y-0.5;
+  letter-spacing: 0.02em;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-700 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-slate-50 hover:shadow-lg transform hover:-translate-y-0.5;
+  letter-spacing: 0.02em;
+}
+
+.btn-outline {
+  @apply bg-transparent border-2 border-primary-700 text-primary-700 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-primary-50 hover:shadow-lg transform hover:-translate-y-0.5;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
   @apply bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-10 py-5 rounded-lg font-medium transition-all duration-500 hover:from-blue-700 hover:to-indigo-700 transform;
   letter-spacing: 0.05em;
   box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
   position: relative;
   overflow: hidden;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
 }
 
 .btn-secondary {
@@ -254,10 +196,24 @@ body {
 }
 
 @keyframes loading-dots {
-  0%, 20% { content: ''; }
-  40% { content: '.'; }
-  60% { content: '..'; }
-  80%, 100% { content: '...'; }
+
+  0%,
+  20% {
+    content: '';
+  }
+
+  40% {
+    content: '.';
+  }
+
+  60% {
+    content: '..';
+  }
+
+  80%,
+  100% {
+    content: '...';
+  }
 }
 
 /* Parallax effect */
@@ -309,9 +265,12 @@ body {
 
 /* Floating Animation */
 @keyframes float-3d {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) translateZ(0px);
   }
+
   50% {
     transform: translateY(-20px) translateZ(20px);
   }
@@ -340,21 +299,6 @@ body {
   overflow: hidden;
 }
 
-.gradient-overlay::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.6s;
-}
-
-.gradient-overlay:hover::before {
-  left: 100%;
-}
-
 /* Advanced Glass Morphism */
 .glass-advanced {
   background: rgba(255, 255, 255, 0.1);
@@ -369,6 +313,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -384,6 +329,7 @@ body {
   from {
     transform: translateX(-100%);
   }
+
   to {
     transform: translateX(0%);
   }
@@ -395,7 +341,7 @@ body {
 
 /* Neon Glow Effects */
 .neon-glow {
-  box-shadow: 
+  box-shadow:
     0 0 5px currentColor,
     0 0 10px currentColor,
     0 0 15px currentColor,
@@ -404,7 +350,7 @@ body {
 
 .neon-blue {
   color: #00ffff;
-  text-shadow: 
+  text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00ffff,
     0 0 15px #00ffff,
@@ -413,7 +359,7 @@ body {
 
 .neon-pink {
   color: #ff6b6b;
-  text-shadow: 
+  text-shadow:
     0 0 5px #ff6b6b,
     0 0 10px #ff6b6b,
     0 0 15px #ff6b6b,
@@ -431,70 +377,93 @@ body {
 }
 
 @keyframes holographic {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* Particle Effects */
-.particle-bg {
-  position: relative;
-  overflow: hidden;
-}
-
-.particle-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-  animation: particle-float 20s ease-in-out infinite;
-}
-
-@keyframes particle-float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(1deg); }
-  66% { transform: translateY(10px) rotate(-1deg); }
-}
+/* Particle Effects Removed */
 
 /* Enhanced Animations */
 @keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(1deg); }
-  66% { transform: translateY(10px) rotate(-1deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+
+  66% {
+    transform: translateY(10px) rotate(-1deg);
+  }
 }
 
 @keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+  }
 }
 
 @keyframes slideInUp {
-  0% { transform: translateY(100px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInScale {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes pulse-glow {
-  0%, 100% { 
+
+  0%,
+  100% {
     box-shadow: 0 0 5px currentColor;
     transform: scale(1);
   }
-  50% { 
+
+  50% {
     box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
     transform: scale(1.05);
   }
@@ -533,31 +502,23 @@ body {
 
 /* Enhanced Mobile Optimizations */
 @media (max-width: 640px) {
-  .hero-bg::before {
-    animation-duration: 30s;
-  }
-  
   .floating-element {
     animation-duration: 8s;
   }
-  
+
   .three-d-hover:hover {
     transform: none;
   }
-  
-  .particle-bg::before {
-    animation-duration: 30s;
-  }
-  
+
   /* Reduce 3D effects on mobile for better performance */
   .three-d-container {
     perspective: 500px;
   }
-  
+
   .three-d-element {
     transform: none !important;
   }
-  
+
   /* Improve touch targets */
   .btn-primary,
   .btn-secondary {
@@ -567,20 +528,20 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
+
   /* Better spacing for mobile */
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+
   /* Enhanced mobile logo styling - Compact Size */
   .logo-container {
     border-width: 1px;
     box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
     padding: 0.25rem;
   }
-  
+
   .logo-container:hover {
     transform: translateY(-0.5px);
     box-shadow: 0 3px 12px rgba(59, 130, 246, 0.2);
@@ -588,26 +549,28 @@ body {
 }
 
 @media (max-width: 480px) {
+
   /* Extra small screens */
   .hero-bg {
     min-height: 100vh;
   }
-  
+
   .floating-element {
-    display: none; /* Hide floating elements on very small screens */
+    display: none;
+    /* Hide floating elements on very small screens */
   }
-  
+
   /* Reduce text sizes further */
   h1 {
     font-size: 1.5rem;
     line-height: 1.2;
   }
-  
+
   h2 {
     font-size: 1.25rem;
     line-height: 1.3;
   }
-  
+
   /* Stack elements vertically */
   .grid-cols-2 {
     grid-template-columns: 1fr;
@@ -616,12 +579,11 @@ body {
 
 /* Reduced motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  .floating-element,
-  .particle-bg::before,
-  .hero-bg::before {
+
+  .floating-element {
     animation: none;
   }
-  
+
   .three-d-hover:hover {
     transform: none;
   }
@@ -666,19 +628,20 @@ body {
     width: 48px;
     height: 48px;
   }
-  
+
   /* Improve touch scrolling on mobile */
   body {
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
   }
-  
+
   /* Prevent scroll bounce on iOS */
-  html, body {
+  html,
+  body {
     height: 100%;
     overflow-x: hidden;
   }
-  
+
   /* Mobile logo improvements */
   .logo-container {
     min-height: 64px;
@@ -686,13 +649,13 @@ body {
     flex: 1;
     max-width: 60%;
   }
-  
+
   /* Mobile header logo text */
   .mobile-logo-text {
     flex: 1;
     min-width: 0;
   }
-  
+
   /* Mobile menu visibility */
   .mobile-menu {
     position: absolute;
@@ -704,40 +667,42 @@ body {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border-top: 1px solid #e5e7eb;
   }
-  
-/* Mobile menu improvements */
-.mobile-menu-item {
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.4;
-  font-weight: 700;
-  padding: 1.5rem;
-  min-height: 72px;
-  letter-spacing: 0.025em;
-}
 
-/* Mobile menu scroll fix */
-.mobile-menu {
-  max-height: 80vh;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-  
+  /* Mobile menu improvements */
+  .mobile-menu-item {
+    font-size: 1.5rem;
+    /* 24px */
+    line-height: 1.4;
+    font-weight: 700;
+    padding: 1.5rem;
+    min-height: 72px;
+    letter-spacing: 0.025em;
+  }
+
+  /* Mobile menu scroll fix */
+  .mobile-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
   /* Mobile menu button improvements */
   .mobile-menu-button {
     min-width: 56px;
     min-height: 56px;
     padding: 1rem;
   }
-  
+
   /* Better touch targets for mobile */
   .touch-target {
     min-width: 44px;
     min-height: 44px;
   }
-  
+
   /* Enhanced mobile menu items */
   .mobile-menu-item {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
+    /* 20px */
     line-height: 1.5;
     font-weight: 600;
     padding: 1rem;
@@ -750,13 +715,13 @@ body {
     background-color: rgba(59, 130, 246, 0.1);
     transform: translateX(4px);
   }
-  
+
   /* Enhanced mobile menu text */
   .mobile-menu-item {
     color: #1f2937;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
-  
+
   .mobile-menu-item:hover {
     color: #3b82f6;
     background-color: rgba(59, 130, 246, 0.1);
@@ -782,7 +747,8 @@ body {
    =================================== */
 
 /* Prevent text selection on buttons and interactive elements */
-button, a[role="button"] {
+button,
+a[role="button"] {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -791,8 +757,12 @@ button, a[role="button"] {
 
 /* Enhanced Mobile Typography */
 @media (max-width: 768px) {
+
   /* Premium heading sizes for mobile */
-  .text-5xl, .text-6xl, .text-7xl, .text-8xl {
+  .text-5xl,
+  .text-6xl,
+  .text-7xl,
+  .text-8xl {
     font-size: clamp(2rem, 10vw, 3.5rem) !important;
     line-height: 1.1 !important;
   }
@@ -814,7 +784,9 @@ button, a[role="button"] {
   }
 
   /* Readable body text on mobile */
-  p, li, span {
+  p,
+  li,
+  span {
     font-size: clamp(0.875rem, 4vw, 1.125rem);
     line-height: 1.7;
   }
@@ -841,13 +813,15 @@ button, a[role="button"] {
   }
 
   /* Mobile container padding */
-  .px-24, .px-16 {
+  .px-24,
+  .px-16 {
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
   }
 
   /* Mobile gap adjustments */
-  .gap-16, .gap-12 {
+  .gap-16,
+  .gap-12 {
     gap: 2rem !important;
   }
 
@@ -856,7 +830,9 @@ button, a[role="button"] {
   }
 
   /* Premium buttons on mobile */
-  .btn-primary, .btn-secondary, .btn-premium {
+  .btn-primary,
+  .btn-secondary,
+  .btn-premium {
     padding: 1rem 2rem !important;
     font-size: 0.75rem !important;
     letter-spacing: 0.1em !important;
@@ -872,11 +848,14 @@ button, a[role="button"] {
   }
 
   /* Grid adjustments for mobile */
-  .grid-cols-3, .grid-cols-4, .grid-cols-5 {
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5 {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 
-  .lg\\:grid-cols-3, .md\\:grid-cols-3 {
+  .lg\:grid-cols-3,
+  .md\:grid-cols-3 {
     grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
   }
 
@@ -888,6 +867,7 @@ button, a[role="button"] {
 
 /* Extra Small Mobile Devices */
 @media (max-width: 480px) {
+
   /* Ultra compact spacing */
   .py-32 {
     padding-top: 3rem !important;
@@ -900,7 +880,8 @@ button, a[role="button"] {
   }
 
   /* Smaller buttons on very small screens */
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     padding: 0.875rem 1.5rem !important;
     font-size: 0.625rem !important;
   }
@@ -911,7 +892,10 @@ button, a[role="button"] {
     padding-right: 1rem !important;
   }
 
-  .px-24, .px-16, .px-8, .px-6 {
+  .px-24,
+  .px-16,
+  .px-8,
+  .px-6 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
   }
@@ -919,14 +903,19 @@ button, a[role="button"] {
 
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
+
   /* Larger touch targets */
-  button, a, input, select, textarea {
+  button,
+  a,
+  input,
+  select,
+  textarea {
     min-height: 44px;
   }
 
   /* Remove hover states on touch devices */
-  .hover\\:scale-105:hover,
-  .hover\\:scale-110:hover {
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover {
     transform: none;
   }
 
@@ -938,8 +927,10 @@ button, a[role="button"] {
 
 /* Landscape mobile orientation */
 @media (max-width: 896px) and (orientation: landscape) {
+
   /* Reduce hero section height in landscape */
-  .hero-bg, .min-h-screen {
+  .hero-bg,
+  .min-h-screen {
     min-height: auto !important;
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
@@ -954,14 +945,18 @@ button, a[role="button"] {
 
 /* iOS specific fixes */
 @supports (-webkit-touch-callout: none) {
+
   /* Fix iOS input zoom */
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     font-size: 16px !important;
   }
 }
 
 /* Android specific optimizations */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
   /* Optimize for Android Chrome */
   * {
     -webkit-font-smoothing: antialiased;
@@ -970,7 +965,9 @@ button, a[role="button"] {
 }
 
 /* High DPI / Retina displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
   /* Sharper text on high DPI screens */
   body {
     -webkit-font-smoothing: subpixel-antialiased;
@@ -978,7 +975,11 @@ button, a[role="button"] {
   }
 
   /* Sharper borders */
-  .border, .border-t, .border-b, .border-l, .border-r {
+  .border,
+  .border-t,
+  .border-b,
+  .border-l,
+  .border-r {
     border-width: 0.5px;
   }
 }

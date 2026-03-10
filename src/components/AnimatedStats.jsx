@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Box, Sphere, Torus } from '@react-three/drei'

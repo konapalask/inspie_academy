@@ -1,0 +1,21 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/videos/route": "app/api/videos/route.js",
+  "/blog/page": "app/blog/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/about/page": "app/about/page.js",
+  "/eamcet-coaching-vijayawada/page": "app/eamcet-coaching-vijayawada/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/intermediate-mpc-coaching/page": "app/intermediate-mpc-coaching/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/admissions/page": "app/admissions/page.js",
+  "/intermediate-bipc-coaching/page": "app/intermediate-bipc-coaching/page.js",
+  "/courses/page": "app/courses/page.js",
+  "/neet-coaching-vijayawada/page": "app/neet-coaching-vijayawada/page.js",
+  "/results/page": "app/results/page.js",
+  "/jee-coaching-vijayawada/page": "app/jee-coaching-vijayawada/page.js",
+  "/page": "app/page.js",
+  "/student-login/page": "app/student-login/page.js",
+  "/intermediate-tuitions-vijayawada/page": "app/intermediate-tuitions-vijayawada/page.js"
+}

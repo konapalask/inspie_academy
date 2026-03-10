@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef, useMemo, Suspense } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { Sphere, Box, Torus, OrbitControls, Stars, Text, Environment, ContactShadows, Float, MeshWobbleMaterial, MeshDistortMaterial, Sphere as DreiSphere } from '@react-three/drei'

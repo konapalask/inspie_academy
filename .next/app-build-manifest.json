@@ -1,0 +1,190 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/app/_not-found/page-c0b7a20218706edc.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/css/910f5256f4a2107c.css",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/layout-8a00a2a7ea18a224.js"
+    ],
+    "/api/videos/route": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/app/api/videos/route-01991350e0582e5b.js"
+    ],
+    "/blog/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/blog/page-539dede786711545.js"
+    ],
+    "/admin/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/admin/page-1ac55077f4781870.js"
+    ],
+    "/faq/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/faq/page-eb4a5e9f56f1f54c.js"
+    ],
+    "/about/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/about/page-0752e4531e3c9f79.js"
+    ],
+    "/eamcet-coaching-vijayawada/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/eamcet-coaching-vijayawada/page-4b4adf27cec33be3.js"
+    ],
+    "/gallery/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/gallery/page-273afe56b65e7d8e.js"
+    ],
+    "/intermediate-mpc-coaching/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/intermediate-mpc-coaching/page-775790f4741343a5.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/contact/page-27128b83feed2cc7.js"
+    ],
+    "/admissions/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/admissions/page-c0d807e72e3ca08d.js"
+    ],
+    "/intermediate-bipc-coaching/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/intermediate-bipc-coaching/page-9c975ae600d229f6.js"
+    ],
+    "/courses/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/courses/page-536c33967d6943f9.js"
+    ],
+    "/neet-coaching-vijayawada/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/neet-coaching-vijayawada/page-b5fc933edf1ada2d.js"
+    ],
+    "/results/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/results/page-2e1cb8f3c875ae14.js"
+    ],
+    "/jee-coaching-vijayawada/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/jee-coaching-vijayawada/page-782a4a986d1ffd63.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/page-468fb021eddebcb4.js"
+    ],
+    "/student-login/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/417-9adfd62ece527876.js",
+      "static/chunks/app/student-login/page-4f7f490163d8366c.js"
+    ],
+    "/intermediate-tuitions-vijayawada/page": [
+      "static/chunks/webpack-46670a11b9ee8f6e.js",
+      "static/chunks/4bd1b696-d155aa09db86789c.js",
+      "static/chunks/184-e54b4e454503d46a.js",
+      "static/chunks/main-app-cd52ce30ca5f0296.js",
+      "static/chunks/9081a741-99bbcf18bca104f3.js",
+      "static/chunks/183-8547b300b158f6f1.js",
+      "static/chunks/app/intermediate-tuitions-vijayawada/page-4c3ec7586f00d6ba.js"
+    ]
+  }
+}
